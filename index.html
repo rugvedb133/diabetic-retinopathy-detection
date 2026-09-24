@@ -62,6 +62,37 @@
         <div class="orb"></div>
       </div>
     </section>
+    <section class="problem" aria-labelledby="problem-heading">
+      <div class="problem-text">
+        <h2 id="problem-heading">The screening bottleneck</h2>
+        <p>
+          Diabetic retinopathy is damage to the retina caused by diabetes.
+          Early on it has no symptoms at all — the only way to catch it is
+          to photograph the retina and look. Left alone, it's a leading
+          cause of preventable blindness.
+        </p>
+        <p>
+          The catch is that "look" currently means a trained doctor
+          reviewing each fundus photo individually. That doesn't scale:
+          doctors can't be everywhere screening is needed, and every image
+          waits in a queue for one to be free. A model that gives a fast,
+          preliminary severity rating — flagging the images that actually
+          need a doctor's eyes — was the whole motivation for this
+          project.
+        </p>
+      </div>
+
+      <div class="severity-strip" role="img" aria-label="The five stages of diabetic retinopathy severity, from no DR to proliferative, shown as a gradient from light to dark.">
+        <ol class="severity-list">
+          <li style="--stop: var(--peach)"><span class="sw"></span>No DR</li>
+          <li style="--stop: var(--amber-bright)"><span class="sw"></span>Mild</li>
+          <li style="--stop: var(--amber)"><span class="sw"></span>Moderate</li>
+          <li style="--stop: var(--amber-deep)"><span class="sw"></span>Severe</li>
+          <li style="--stop: var(--umber)"><span class="sw"></span>Proliferative</li>
+        </ol>
+        <p class="severity-caption">The five grades this model predicts — the same scale used throughout the write-up.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
