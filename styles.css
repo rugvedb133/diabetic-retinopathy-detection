@@ -320,3 +320,152 @@ a:hover { color: var(--amber-bright); }
     padding-bottom: 4rem;
   }
 }
+
+/* ---------------------------------------------------------------
+   Data & stack
+   ---------------------------------------------------------------- */
+.data-stack {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+  border-top: 1px solid var(--border);
+}
+
+.data-stack h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3.5rem;
+}
+
+.ds-block h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.ds-intro {
+  color: var(--ink-dim);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 56ch;
+}
+
+/* Distribution chart */
+.dist-chart {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.dist-chart li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr 7.5rem;
+  align-items: center;
+  gap: 0.85rem;
+}
+.dist-label {
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+.dist-bar {
+  display: block;
+  height: 10px;
+  background: var(--bg-elevated);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.dist-fill {
+  display: block;
+  height: 100%;
+  width: var(--pct);
+  background: var(--stop);
+  border-radius: 6px;
+}
+.dist-val {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  text-align: right;
+  white-space: nowrap;
+}
+.dist-val small { color: var(--ink-faint); }
+
+.dist-caption {
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+  color: var(--ink-faint);
+  max-width: 56ch;
+}
+
+.prep-note {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--ink-dim);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  max-width: 56ch;
+}
+
+/* Stack cards */
+.env-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0.85rem;
+}
+.env-label {
+  font-size: 0.78rem;
+  color: var(--amber-bright);
+  margin: 0 0 0.35rem;
+}
+.env-name {
+  font-size: 0.98rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin: 0 0 0.3rem;
+}
+.env-spec {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.lib-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+.lib-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+}
+
+@media (max-width: 860px) {
+  .ds-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .dist-chart li { grid-template-columns: 5.2rem 1fr 6rem; }
+}
+@media (max-width: 480px) {
+  .dist-chart li { grid-template-columns: 1fr; row-gap: 0.35rem; }
+  .dist-val { text-align: left; }
+}

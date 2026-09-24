@@ -93,6 +93,87 @@
         <p class="severity-caption">The five grades this model predicts — the same scale used throughout the write-up.</p>
       </div>
     </section>
+
+    <section class="data-stack" aria-labelledby="data-stack-heading">
+      <h2 id="data-stack-heading">Data &amp; stack</h2>
+
+      <div class="ds-grid">
+        <div class="ds-block">
+          <h3>The dataset</h3>
+          <p class="ds-intro">
+            31,631 fundus photos from EyePACS, an open retinopathy-screening
+            platform, each graded 0–4 by a clinician. It's real screening
+            data, not a clean benchmark: different camera models, some
+            images inverted, some out of focus or over/underexposed, a
+            handful mislabeled. A separate 53,576-image set was held out
+            for testing.
+          </p>
+
+          <ul class="dist-chart">
+            <li style="--pct: 70.54%; --stop: var(--peach)">
+              <span class="dist-label">No DR</span>
+              <span class="dist-bar"><span class="dist-fill"></span></span>
+              <span class="dist-val">22,315 <small>(70.5%)</small></span>
+            </li>
+            <li style="--pct: 16.73%; --stop: var(--amber)">
+              <span class="dist-label">Moderate</span>
+              <span class="dist-bar"><span class="dist-fill"></span></span>
+              <span class="dist-val">5,292 <small>(16.7%)</small></span>
+            </li>
+            <li style="--pct: 7.72%; --stop: var(--amber-bright)">
+              <span class="dist-label">Mild</span>
+              <span class="dist-bar"><span class="dist-fill"></span></span>
+              <span class="dist-val">2,443 <small>(7.7%)</small></span>
+            </li>
+            <li style="--pct: 2.76%; --stop: var(--amber-deep)">
+              <span class="dist-label">Severe</span>
+              <span class="dist-bar"><span class="dist-fill"></span></span>
+              <span class="dist-val">873 <small>(2.8%)</small></span>
+            </li>
+            <li style="--pct: 2.23%; --stop: var(--umber)">
+              <span class="dist-label">Proliferative</span>
+              <span class="dist-bar"><span class="dist-fill"></span></span>
+              <span class="dist-val">708 <small>(2.2%)</small></span>
+            </li>
+          </ul>
+          <p class="dist-caption">
+            70% of the training set is healthy retinas — the class
+            imbalance a plain classifier tends to overfit to. More on that
+            in the results below.
+          </p>
+
+          <p class="prep-note">
+            Before training: every image resized to 256×256, randomly
+            flipped horizontally and vertically for augmentation, then
+            normalized to zero mean and unit variance.
+          </p>
+        </div>
+
+        <div class="ds-block">
+          <h3>The stack</h3>
+
+          <div class="env-card">
+            <p class="env-label">Training</p>
+            <p class="env-name">Google Colab · Tesla K80</p>
+            <p class="env-spec">2,496 CUDA cores · 12GB GDDR5 VRAM · Xeon @2.3GHz, 2 threads</p>
+          </div>
+
+          <div class="env-card">
+            <p class="env-label">Offline evaluation</p>
+            <p class="env-name">Local machine · GTX 1050</p>
+            <p class="env-spec">4GB GDDR5 VRAM · Intel i5-8300H, quad-core</p>
+          </div>
+
+          <ul class="lib-tags">
+            <li>Python 3.6</li>
+            <li>PyTorch 1.0</li>
+            <li>CUDA 10</li>
+            <li>NumPy</li>
+            <li>Matplotlib</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
