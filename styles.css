@@ -469,3 +469,49 @@ a:hover { color: var(--amber-bright); }
   .dist-chart li { grid-template-columns: 1fr; row-gap: 0.35rem; }
   .dist-val { text-align: left; }
 }
+
+/* ---------------------------------------------------------------
+   Architecture
+   ---------------------------------------------------------------- */
+.architecture {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+  border-top: 1px solid var(--border);
+}
+.architecture h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.arch-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+.arch-text p {
+  color: var(--ink-dim);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.arch-figure {
+  margin: 0;
+}
+.arch-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+.arch-figure figcaption {
+  margin-top: 1rem;
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+@media (max-width: 860px) {
+  .arch-text { grid-template-columns: 1fr; gap: 1.25rem; }
+}

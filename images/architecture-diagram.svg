@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 460" role="img" aria-labelledby="arch-title arch-desc" font-family="IBM Plex Sans, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+<title id="arch-title">Encoder-decoder architecture with a joint classification head</title>
+<desc id="arch-desc">A 256 by 256 by 3 fundus image passes through four convolution-and-maxpool blocks (channel depth 16, 32, 64, 128) into a 16 by 16 by 128 bottleneck. From that shared bottleneck, one branch mirrors the encoder back up through four transpose-convolution blocks to a 256 by 256 by 3 reconstruction, compared to the input with a reconstruction loss. A second branch feeds fully connected layers ending in a 5-class softmax over the diabetic retinopathy severity grades, compared to the true label with a cross-entropy loss. Both losses are summed and trained jointly.</desc>
+<rect x="0" y="0" width="1080" height="460" rx="16" fill="#221B14" stroke="#2D2418"/>
+<text x="65"  y="24" text-anchor="middle" font-size="12" fill="#F3ECE4">input</text>
+<text x="753" y="24" text-anchor="middle" font-size="12" fill="#F3ECE4">reconstruction</text>
+<text x="212" y="46" text-anchor="middle" font-size="13" letter-spacing="0.02em" fill="#BBB0A4">encoder — conv 3×3 + maxpool 2×2</text>
+<text x="596" y="46" text-anchor="middle" font-size="13" letter-spacing="0.02em" fill="#BBB0A4">decoder — convtranspose 2×2 / 3×3</text>
+<text x="409" y="66" text-anchor="middle" font-size="12" fill="#BBB0A4">reconstruction loss — MSE(input, reconstruction)</text>
+<path d="M 65 105 L 65 76 L 753 76 L 753 105" fill="none" stroke="#8C8074" stroke-width="1"/>
+<rect x="30" y="105.0" width="70" height="90" rx="6" fill="#DCAE94"/><text x="65.0" y="215.0" text-anchor="middle" font-size="12" fill="#BBB0A4">256²</text><text x="65.0" y="230.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×3</text>
+<rect x="122" y="114.0" width="64" height="72" rx="6" fill="#D57027"/><text x="154.0" y="206.0" text-anchor="middle" font-size="12" fill="#BBB0A4">128²</text><text x="154.0" y="221.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×16</text>
+<rect x="208" y="122.0" width="64" height="56" rx="6" fill="#B85F24"/><text x="240.0" y="198.0" text-anchor="middle" font-size="12" fill="#BBB0A4">64²</text><text x="240.0" y="213.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×32</text>
+<rect x="294" y="130.0" width="64" height="40" rx="6" fill="#A15425"/><text x="326.0" y="190.0" text-anchor="middle" font-size="12" fill="#BBB0A4">32²</text><text x="326.0" y="205.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×64</text>
+<rect x="380" y="137.0" width="52" height="26" rx="6" fill="#4D311E"/><text x="406.0" y="183.0" text-anchor="middle" font-size="12" fill="#BBB0A4">16²</text><text x="406.0" y="198.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×128</text>
+<rect x="454" y="130.0" width="64" height="40" rx="6" fill="#A15425"/><text x="486.0" y="190.0" text-anchor="middle" font-size="12" fill="#BBB0A4">32²</text><text x="486.0" y="205.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×64</text>
+<rect x="540" y="122.0" width="64" height="56" rx="6" fill="#B85F24"/><text x="572.0" y="198.0" text-anchor="middle" font-size="12" fill="#BBB0A4">64²</text><text x="572.0" y="213.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×32</text>
+<rect x="626" y="114.0" width="64" height="72" rx="6" fill="#D57027"/><text x="658.0" y="206.0" text-anchor="middle" font-size="12" fill="#BBB0A4">128²</text><text x="658.0" y="221.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×16</text>
+<rect x="718" y="105.0" width="70" height="90" rx="6" fill="#DCAE94"/><text x="753.0" y="215.0" text-anchor="middle" font-size="12" fill="#BBB0A4">256²</text><text x="753.0" y="230.0" font-family="IBM Plex Mono, monospace" text-anchor="middle" font-size="11" fill="#8C8074">×3</text>
+<text x="406.0" y="215" text-anchor="middle" font-size="12" fill="#D57027">shared bottleneck (z)</text>
+<line x1="406.0" y1="229" x2="406.0" y2="270" stroke="#8C8074" stroke-width="1.5" stroke-dasharray="3,4"/>
+<polygon points="401.0,266 411.0,266 406.0,276" fill="#8C8074"/>
+<rect x="321.0" y="280" width="170" height="46" rx="8" fill="none" stroke="#8C8074" stroke-width="1.25"/>
+<text x="406.0" y="308" text-anchor="middle" font-size="13" fill="#F3ECE4">fully connected layers</text>
+<line x1="406.0" y1="326" x2="406.0" y2="358" stroke="#8C8074" stroke-width="1.25"/>
+<polygon points="401.0,354 411.0,354 406.0,364" fill="#8C8074"/>
+<circle cx="342.0" cy="372" r="9" fill="#DCAE94"/>
+<circle cx="374.0" cy="372" r="9" fill="#D57027"/>
+<circle cx="406.0" cy="372" r="9" fill="#B85F24"/>
+<circle cx="438.0" cy="372" r="9" fill="#A15425"/>
+<circle cx="470.0" cy="372" r="9" fill="#6B502F"/>
+<text x="406.0" y="400" text-anchor="middle" font-size="12" fill="#F3ECE4">softmax — 5 severity grades</text>
+<text x="406.0" y="418" text-anchor="middle" font-size="12" fill="#BBB0A4">classification loss — cross-entropy</text>
+</svg>
