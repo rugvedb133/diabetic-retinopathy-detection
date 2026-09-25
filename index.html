@@ -199,11 +199,17 @@
       </div>
 
       <figure class="arch-figure">
+        <object
+          type="image/svg+xml"
+          data="images/architecture-diagram.svg"
+          aria-label="Diagram of the encoder-decoder architecture: a 256×256×3 retinal image is compressed through four convolution-and-maxpool blocks (16, 32, 64, then 128 channels) to a 16×16×128 bottleneck. From there it splits into two paths — a decoder mirroring the encoder back up to a 256×256×3 reconstruction, compared to the input via a reconstruction loss; and a classifier of fully connected layers ending in a 5-class softmax over the DR severity grades, compared via cross-entropy loss. Hover any shape for a short caption."
+        >
         <img
           src="images/architecture-diagram.svg"
           alt="Diagram of the encoder-decoder architecture: a 256×256×3 retinal image is compressed through four convolution-and-maxpool blocks (16, 32, 64, then 128 channels) to a 16×16×128 bottleneck. From there it splits into two paths — a decoder mirroring the encoder back up to a 256×256×3 reconstruction, compared to the input via a reconstruction loss; and a classifier of fully connected layers ending in a 5-class softmax over the DR severity grades, compared via cross-entropy loss."
           loading="lazy"
         >
+        </object>
         <figcaption>
           Every dimension here matches the report's own kernel-size table:
           each encoder step doubles the channel depth (16→32→64→128)
@@ -211,6 +217,7 @@
           reverse with transpose convolutions. ReLU everywhere except the
           decoder's last layer, which uses a sigmoid — reconstructed
           pixels need to land between 0 and 1.
+          Hover (or tab to) any shape for a short caption.
         </figcaption>
       </figure>
     </section>

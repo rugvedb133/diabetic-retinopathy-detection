@@ -499,9 +499,12 @@ a:hover { color: var(--amber-bright); }
 .arch-figure {
   margin: 0;
 }
+.arch-figure object,
 .arch-figure img {
+  display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 820 / 460;
   border-radius: 16px;
 }
 .arch-figure figcaption {
