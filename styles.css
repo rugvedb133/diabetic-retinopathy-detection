@@ -518,3 +518,112 @@ a:hover { color: var(--amber-bright); }
 @media (max-width: 860px) {
   .arch-text { grid-template-columns: 1fr; gap: 1.25rem; }
 }
+
+/* ---------------------------------------------------------------
+   Training procedure
+   ---------------------------------------------------------------- */
+.training {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+  border-top: 1px solid var(--border);
+}
+.training h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+.training-intro {
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 62ch;
+  margin-bottom: 2.5rem;
+}
+
+.phase-bar {
+  display: flex;
+  height: 38px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+.phase-seg {
+  flex: 0 0 var(--w);
+  background: var(--stop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+/* per-segment text color, chosen for contrast against that segment's fill */
+.phase-seg:nth-child(1) { color: var(--bg); }
+.phase-seg:nth-child(2),
+.phase-seg:nth-child(3) { color: var(--ink); }
+
+.phase-list {
+  list-style: none;
+  counter-reset: phase;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.phase-list li {
+  counter-increment: phase;
+  position: relative;
+  padding-left: 2.1rem;
+}
+.phase-list li::before {
+  content: counter(phase);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phase-name {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+.phase-range {
+  display: block;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+}
+.phase-body {
+  color: var(--ink-dim);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.hyperparams {
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+.hp-label {
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  margin: 0 0 0.75rem;
+}
+
+@media (max-width: 860px) {
+  .phase-list { grid-template-columns: 1fr; gap: 1.5rem; }
+}

@@ -204,11 +204,11 @@
           data="images/architecture-diagram.svg"
           aria-label="Diagram of the encoder-decoder architecture: a 256×256×3 retinal image is compressed through four convolution-and-maxpool blocks (16, 32, 64, then 128 channels) to a 16×16×128 bottleneck. From there it splits into two paths — a decoder mirroring the encoder back up to a 256×256×3 reconstruction, compared to the input via a reconstruction loss; and a classifier of fully connected layers ending in a 5-class softmax over the DR severity grades, compared via cross-entropy loss. Hover any shape for a short caption."
         >
-        <img
-          src="images/architecture-diagram.svg"
-          alt="Diagram of the encoder-decoder architecture: a 256×256×3 retinal image is compressed through four convolution-and-maxpool blocks (16, 32, 64, then 128 channels) to a 16×16×128 bottleneck. From there it splits into two paths — a decoder mirroring the encoder back up to a 256×256×3 reconstruction, compared to the input via a reconstruction loss; and a classifier of fully connected layers ending in a 5-class softmax over the DR severity grades, compared via cross-entropy loss."
-          loading="lazy"
-        >
+          <img
+            src="images/architecture-diagram.svg"
+            alt="Diagram of the encoder-decoder architecture: a 256×256×3 retinal image is compressed through four convolution-and-maxpool blocks (16, 32, 64, then 128 channels) to a 16×16×128 bottleneck. From there it splits into two paths — a decoder mirroring the encoder back up to a 256×256×3 reconstruction, compared to the input via a reconstruction loss; and a classifier of fully connected layers ending in a 5-class softmax over the DR severity grades, compared via cross-entropy loss."
+            loading="lazy"
+          >
         </object>
         <figcaption>
           Every dimension here matches the report's own kernel-size table:
@@ -220,6 +220,62 @@
           Hover (or tab to) any shape for a short caption.
         </figcaption>
       </figure>
+    </section>
+
+    <section class="training" aria-labelledby="training-heading">
+      <h2 id="training-heading">Training procedure</h2>
+      <p class="training-intro">
+        The final model wasn't trained in one pass. It went through three
+        distinct phases over 100 epochs total, each with a different job —
+        the same autoencoder-then-joint-then-freeze idea the earlier
+        single-phase version didn't have yet.
+      </p>
+
+      <div class="phase-bar" role="img" aria-label="A 100-epoch training run split into three phases: 50 epochs autoencoder-only, 30 epochs joint training, and 20 epochs classifier-only fine-tuning.">
+        <div class="phase-seg" style="--w: 50%; --stop: var(--amber-bright)">50 epochs</div>
+        <div class="phase-seg" style="--w: 30%; --stop: var(--amber-deep)">30</div>
+        <div class="phase-seg" style="--w: 20%; --stop: var(--umber-dark)">20</div>
+      </div>
+
+      <ol class="phase-list">
+        <li>
+          <p class="phase-name">Learn to see <span class="phase-range">epochs 1–50</span></p>
+          <p class="phase-body">
+            Only the autoencoder trains — encoder and decoder, reconstruction
+            loss only. No classifier yet. The goal is a network that can
+            already compress and rebuild a fundus photo well before it's
+            asked to diagnose anything from that compression.
+          </p>
+        </li>
+        <li>
+          <p class="phase-name">Learn together <span class="phase-range">epochs 51–80</span></p>
+          <p class="phase-body">
+            The classifier head is attached and everything trains jointly —
+            reconstruction loss and classification loss, summed. This is
+            where the two objectives actually pull on each other.
+          </p>
+        </li>
+        <li>
+          <p class="phase-name">Specialize <span class="phase-range">epochs 81–100</span></p>
+          <p class="phase-body">
+            The encoder is frozen. Only the classifier keeps training, on
+            classification loss alone — letting it settle into the
+            now-stable features without the joint objective still pulling
+            them around.
+          </p>
+        </li>
+      </ol>
+
+      <div class="hyperparams">
+        <p class="hp-label">Optimization</p>
+        <ul class="lib-tags">
+          <li>Adam</li>
+          <li>lr = 0.001</li>
+          <li>β₁ = 0.9, β₂ = 0.999</li>
+          <li>dropout = 0.5 (classifier)</li>
+          <li>ReLU hidden activations</li>
+        </ul>
+      </div>
     </section>
   </main>
 </body>
