@@ -277,6 +277,257 @@
         </ul>
       </div>
     </section>
+
+    <section class="results" aria-labelledby="results-heading">
+      <h2 id="results-heading">Results</h2>
+      <p class="results-intro">
+        These are the five worked examples from the original presentation —
+        one per severity grade, not a random sample of the test set. Real
+        photo, the model's actual softmax output, and the true grade. Open
+        any one for the full probability breakdown.
+      </p>
+
+      <ul class="results-grid">
+          <li class="result-card">
+            <button class="result-trigger" data-dialog="dlg-0" aria-haspopup="dialog">
+              <img src="images/results/grade0.jpg" alt="Fundus photo, grade 0 (No DR)" loading="lazy">
+              <span class="result-meta">
+                <span class="result-grade">Grade 0 — No DR</span>
+                <span class="mini-bars" aria-hidden="true"><span class="mini-bar true" style="--h:56.9%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:21.9%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:19.6%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:1.1%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:0.4%; --stop:var(--umber)"></span></span>
+              </span>
+            </button>
+          </li>
+          <li class="result-card">
+            <button class="result-trigger" data-dialog="dlg-1" aria-haspopup="dialog">
+              <img src="images/results/grade1.jpg" alt="Fundus photo, grade 1 (Mild)" loading="lazy">
+              <span class="result-meta">
+                <span class="result-grade">Grade 1 — Mild</span>
+                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:21.7%; --stop:var(--peach)"></span><span class="mini-bar true" style="--h:34.2%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:20.4%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:12.6%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:11.1%; --stop:var(--umber)"></span></span>
+              </span>
+            </button>
+          </li>
+          <li class="result-card">
+            <button class="result-trigger" data-dialog="dlg-2" aria-haspopup="dialog">
+              <img src="images/results/grade2.jpg" alt="Fundus photo, grade 2 (Moderate)" loading="lazy">
+              <span class="result-meta">
+                <span class="result-grade">Grade 2 — Moderate</span>
+                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:2.4%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:0.8%; --stop:var(--amber-bright)"></span><span class="mini-bar true" style="--h:63.6%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:27.9%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:5.3%; --stop:var(--umber)"></span></span>
+              </span>
+            </button>
+          </li>
+          <li class="result-card">
+            <button class="result-trigger" data-dialog="dlg-3" aria-haspopup="dialog">
+              <img src="images/results/grade3.jpg" alt="Fundus photo, grade 3 (Severe)" loading="lazy">
+              <span class="result-meta">
+                <span class="result-grade">Grade 3 — Severe</span>
+                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:3.3%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:3.1%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:28.0%; --stop:var(--amber)"></span><span class="mini-bar true" style="--h:55.0%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:10.6%; --stop:var(--umber)"></span></span>
+              </span>
+            </button>
+          </li>
+          <li class="result-card">
+            <button class="result-trigger" data-dialog="dlg-4" aria-haspopup="dialog">
+              <img src="images/results/grade4.jpg" alt="Fundus photo, grade 4 (Proliferative)" loading="lazy">
+              <span class="result-meta">
+                <span class="result-grade">Grade 4 — Proliferative</span>
+                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:11.4%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:5.1%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:27.1%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:15.8%; --stop:var(--amber-deep)"></span><span class="mini-bar true" style="--h:40.6%; --stop:var(--umber)"></span></span>
+              </span>
+            </button>
+          </li>
+      </ul>
+    </section>
+
+    <dialog id="dlg-0" class="result-dialog" aria-labelledby="dlg-0-title">
+      <div class="result-dialog-inner">
+        <button type="button" class="dialog-close" aria-label="Close">×</button>
+        <img src="images/results/grade0.jpg" alt="Fundus photo, grade 0 (No DR)">
+        <div class="result-dialog-body">
+          <h3 id="dlg-0-title">Grade 0 — No DR</h3>
+          <p class="result-file">EyePACS id: 389_left</p>
+          <ul class="rb-list">
+            <li class="rb-row true">
+              <span class="rb-label">No DR</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:56.9%; --stop:var(--peach)"></span></span>
+              <span class="rb-val">56.9%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Mild</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:21.9%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-val">21.9%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Moderate</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:19.6%; --stop:var(--amber)"></span></span>
+              <span class="rb-val">19.6%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Severe</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:1.1%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-val">1.1%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Proliferative</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:0.4%; --stop:var(--umber)"></span></span>
+              <span class="rb-val">0.4%</span>
+            </li>
+          </ul>
+          <p class="result-verdict">Model predicted <strong>No DR</strong> (56.9% confidence) — correct.</p>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="dlg-1" class="result-dialog" aria-labelledby="dlg-1-title">
+      <div class="result-dialog-inner">
+        <button type="button" class="dialog-close" aria-label="Close">×</button>
+        <img src="images/results/grade1.jpg" alt="Fundus photo, grade 1 (Mild)">
+        <div class="result-dialog-body">
+          <h3 id="dlg-1-title">Grade 1 — Mild</h3>
+          <p class="result-file">EyePACS id: 5249_left</p>
+          <ul class="rb-list">
+            <li class="rb-row">
+              <span class="rb-label">No DR</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:21.7%; --stop:var(--peach)"></span></span>
+              <span class="rb-val">21.7%</span>
+            </li>
+            <li class="rb-row true">
+              <span class="rb-label">Mild</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:34.2%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-val">34.2%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Moderate</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:20.4%; --stop:var(--amber)"></span></span>
+              <span class="rb-val">20.4%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Severe</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:12.6%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-val">12.6%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Proliferative</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:11.1%; --stop:var(--umber)"></span></span>
+              <span class="rb-val">11.1%</span>
+            </li>
+          </ul>
+          <p class="result-verdict">Model predicted <strong>Mild</strong> (34.2% confidence) — correct.</p>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="dlg-2" class="result-dialog" aria-labelledby="dlg-2-title">
+      <div class="result-dialog-inner">
+        <button type="button" class="dialog-close" aria-label="Close">×</button>
+        <img src="images/results/grade2.jpg" alt="Fundus photo, grade 2 (Moderate)">
+        <div class="result-dialog-body">
+          <h3 id="dlg-2-title">Grade 2 — Moderate</h3>
+          <p class="result-file">EyePACS id: 5848_left</p>
+          <ul class="rb-list">
+            <li class="rb-row">
+              <span class="rb-label">No DR</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:2.4%; --stop:var(--peach)"></span></span>
+              <span class="rb-val">2.4%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Mild</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:0.8%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-val">0.8%</span>
+            </li>
+            <li class="rb-row true">
+              <span class="rb-label">Moderate</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:63.6%; --stop:var(--amber)"></span></span>
+              <span class="rb-val">63.6%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Severe</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:27.9%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-val">27.9%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Proliferative</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:5.3%; --stop:var(--umber)"></span></span>
+              <span class="rb-val">5.3%</span>
+            </li>
+          </ul>
+          <p class="result-verdict">Model predicted <strong>Moderate</strong> (63.6% confidence) — correct.</p>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="dlg-3" class="result-dialog" aria-labelledby="dlg-3-title">
+      <div class="result-dialog-inner">
+        <button type="button" class="dialog-close" aria-label="Close">×</button>
+        <img src="images/results/grade3.jpg" alt="Fundus photo, grade 3 (Severe)">
+        <div class="result-dialog-body">
+          <h3 id="dlg-3-title">Grade 3 — Severe</h3>
+          <p class="result-file">EyePACS id: 38198_right</p>
+          <ul class="rb-list">
+            <li class="rb-row">
+              <span class="rb-label">No DR</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:3.3%; --stop:var(--peach)"></span></span>
+              <span class="rb-val">3.3%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Mild</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:3.1%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-val">3.1%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Moderate</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:28.0%; --stop:var(--amber)"></span></span>
+              <span class="rb-val">28.0%</span>
+            </li>
+            <li class="rb-row true">
+              <span class="rb-label">Severe</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:55.0%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-val">55.0%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Proliferative</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:10.6%; --stop:var(--umber)"></span></span>
+              <span class="rb-val">10.6%</span>
+            </li>
+          </ul>
+          <p class="result-verdict">Model predicted <strong>Severe</strong> (55.0% confidence) — correct.</p>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="dlg-4" class="result-dialog" aria-labelledby="dlg-4-title">
+      <div class="result-dialog-inner">
+        <button type="button" class="dialog-close" aria-label="Close">×</button>
+        <img src="images/results/grade4.jpg" alt="Fundus photo, grade 4 (Proliferative)">
+        <div class="result-dialog-body">
+          <h3 id="dlg-4-title">Grade 4 — Proliferative</h3>
+          <p class="result-file">EyePACS id: 15975_right</p>
+          <ul class="rb-list">
+            <li class="rb-row">
+              <span class="rb-label">No DR</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:11.4%; --stop:var(--peach)"></span></span>
+              <span class="rb-val">11.4%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Mild</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:5.1%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-val">5.1%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Moderate</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:27.1%; --stop:var(--amber)"></span></span>
+              <span class="rb-val">27.1%</span>
+            </li>
+            <li class="rb-row">
+              <span class="rb-label">Severe</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:15.8%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-val">15.8%</span>
+            </li>
+            <li class="rb-row true">
+              <span class="rb-label">Proliferative</span>
+              <span class="rb-bar"><span class="rb-fill" style="--pct:40.6%; --stop:var(--umber)"></span></span>
+              <span class="rb-val">40.6%</span>
+            </li>
+          </ul>
+          <p class="result-verdict">Model predicted <strong>Proliferative</strong> (40.6% confidence) — correct.</p>
+        </div>
+      </div>
+    </dialog>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
