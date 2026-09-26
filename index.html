@@ -389,6 +389,49 @@
       </div>
     </section>
 
+    <section class="reflection" aria-labelledby="reflection-heading">
+      <h2 id="reflection-heading">Looking back</h2>
+
+      <figure class="progression-figure">
+        <img src="images/accuracy-progression.svg" alt="Line chart: test accuracy was 70% in the November 2019 capstone report, 73% at the best result of the phase-5 evaluation, and 76.3% in the paper published at IEEE ICCCA in October 2020.">
+      </figure>
+
+      <div class="reflection-text">
+        <p>
+          Almost none of that six-point gain came from a better
+          architecture. Same encoder, same decoder, same classifier head
+          the whole way through. What actually moved the number was the
+          training procedure — pretraining the autoencoder alone before
+          ever touching the classifier, then unfreezing it in stages
+          instead of throwing everything into one 20-epoch joint run and
+          hoping. The idea didn't change between the capstone report and
+          the published paper. The discipline of how we trained it did.
+        </p>
+        <p>
+          If we picked this up again, accuracy alone is the thing I'd
+          argue with first. 70% of the dataset is healthy retinas, so a
+          model that's lazy about the rare classes can still post a
+          respectable-looking number. We never broke the result down by
+          class — precision and recall per grade would have told a more
+          honest story than one aggregate percentage does, especially for
+          the Severe and Proliferative cases that actually matter most to
+          catch.
+        </p>
+        <p>
+          The dataset itself was the other honest lesson: different
+          cameras, inconsistent exposure, the occasional mislabeled or
+          inverted image. That's not a flaw in the experiment, it's what
+          real screening data actually looks like, and it's a big part of
+          why the regularization mattered in the first place. And the
+          project was always framed as helping a doctor triage faster,
+          not replacing one — the natural next step, if there were a next
+          step, would be making the model show its work: which part of
+          the image actually drove a given grade, rather than a bare
+          probability.
+        </p>
+      </div>
+    </section>
+
     <dialog id="dlg-0" class="result-dialog" aria-labelledby="dlg-0-title">
       <div class="result-dialog-inner">
         <button type="button" class="dialog-close" aria-label="Close">×</button>

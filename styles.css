@@ -713,6 +713,7 @@ a:hover { color: var(--amber-bright); }
   border-radius: 2px 2px 0 0;
 }
 .mini-bar.true { opacity: 1; }
+.result-card:hover .mini-bars { transform-origin: bottom; transform: scaleY(2);}
 
 /* Dialog */
 .result-dialog {
@@ -939,4 +940,43 @@ a:hover { color: var(--amber-bright); }
 
 @media (max-width: 860px) {
   .paper-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ---------------------------------------------------------------
+   Reflection
+   ---------------------------------------------------------------- */
+.reflection {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 7rem;
+  border-top: 1px solid var(--border);
+}
+.reflection h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.progression-figure {
+  margin: 0 0 3rem;
+  max-width: 42rem;
+}
+.progression-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.reflection-text {
+  max-width: 68ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.reflection-text p {
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0;
 }
