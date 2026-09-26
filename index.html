@@ -207,7 +207,6 @@
           <img
             src="images/architecture-diagram.svg"
             alt="Diagram of the encoder-decoder architecture: a 256×256×3 retinal image is compressed through four convolution-and-maxpool blocks (16, 32, 64, then 128 channels) to a 16×16×128 bottleneck. From there it splits into two paths — a decoder mirroring the encoder back up to a 256×256×3 reconstruction, compared to the input via a reconstruction loss; and a classifier of fully connected layers ending in a 5-class softmax over the DR severity grades, compared via cross-entropy loss."
-            loading="lazy"
           >
         </object>
         <figcaption>
@@ -334,6 +333,60 @@
             </button>
           </li>
       </ul>
+    </section>
+
+    <section class="paper" aria-labelledby="paper-heading">
+      <h2 id="paper-heading">Published research</h2>
+      <p class="paper-intro">
+        This work was peer-reviewed and published at IEEE ICCCA 2020 — a
+        few months past the capstone report above, with a proper training
+        schedule, more baselines to compare against, and about six points
+        of accuracy gained in the process.
+      </p>
+
+      <div class="paper-grid">
+        <div class="citation">
+          <p class="citation-text">
+            “Reducing Overfitting in Diabetic Retinopathy Detection using
+            Transfer Learning,” <br>
+            <em>2020 IEEE 5th International Conference
+            on Computing Communication and Automation (ICCCA)</em>, 
+            October 2020, pp. 298–301.
+          </p>
+          <p class="citation-doi">doi: 10.1109/ICCCA49541.2020.9250772</p>
+          <a class="paper-link" href="https://doi.org/10.1109/ICCCA49541.2020.9250772" target="_blank" rel="noopener">
+            View on IEEE Xplore <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </div>
+
+        <table class="comparison-table">
+          <caption>Test accuracy against three standard baselines</caption>
+          <thead>
+            <tr>
+              <th scope="col">Model</th>
+              <th scope="col">Test accuracy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">AlexNet</th>
+              <td>68.58%</td>
+            </tr>
+            <tr>
+              <th scope="row">VGG16</th>
+              <td>71.32%</td>
+            </tr>
+            <tr>
+              <th scope="row">VGG19</th>
+              <td>73.91%</td>
+            </tr>
+            <tr class="ours">
+              <th scope="row">Ours — autoencoder + CNN</th>
+              <td>76.27%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <dialog id="dlg-0" class="result-dialog" aria-labelledby="dlg-0-title">
