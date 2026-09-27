@@ -12,6 +12,10 @@
   <meta property="og:url" content="https://rugvedb133.github.io/diabetic-retinopathy-detection/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://rugvedb133.github.io/diabetic-retinopathy-detection/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://rugvedb133.github.io/diabetic-retinopathy-detection/images/social-preview.png">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
@@ -67,7 +71,7 @@
         <h2 id="problem-heading">The screening bottleneck</h2>
         <p>
           Diabetic retinopathy is damage to the retina caused by diabetes.
-          Early on it has no symptoms at all — the only way to catch it is
+          Early on it has no symptoms at all; the only way to catch it is
           to photograph the retina and look. Left alone, it's a leading
           cause of preventable blindness.
         </p>
@@ -76,8 +80,8 @@
           reviewing each fundus photo individually. That doesn't scale:
           doctors can't be everywhere screening is needed, and every image
           waits in a queue for one to be free. A model that gives a fast,
-          preliminary severity rating — flagging the images that actually
-          need a doctor's eyes — was the whole motivation for this
+          preliminary severity rating, flagging the images that actually
+          need a doctor's eyes, was the whole motivation for this
           project.
         </p>
       </div>
@@ -90,7 +94,7 @@
           <li style="--stop: var(--amber-deep)"><span class="sw"></span>Severe</li>
           <li style="--stop: var(--umber)"><span class="sw"></span>Proliferative</li>
         </ol>
-        <p class="severity-caption">The five grades this model predicts — the same scale used throughout the write-up.</p>
+        <p class="severity-caption">The five grades this model predicts.</p>
       </div>
     </section>
 
@@ -101,7 +105,7 @@
         <div class="ds-block">
           <h3>The dataset</h3>
           <p class="ds-intro">
-            31,631 fundus photos from EyePACS, an open retinopathy-screening
+            The <a class="dataset-link" href="https://www.kaggle.com/competitions/diabetic-retinopathy-detection/data" target="_blank" rel="noopener">dataset</a> was a collection of 31,631 fundus photos from EyePACS, an open retinopathy-screening
             platform, each graded 0–4 by a clinician. It's real screening
             data, not a clean benchmark: different camera models, some
             images inverted, some out of focus or over/underexposed, a
@@ -137,13 +141,13 @@
             </li>
           </ul>
           <p class="dist-caption">
-            70% of the training set is healthy retinas — the class
-            imbalance a plain classifier tends to overfit to. More on that
-            in the results below.
+            70% of the training set is healthy retinas, causing a class
+            imbalance a plain classifier tends to overfit to. (More on that
+            in the results below.)
           </p>
 
           <p class="prep-note">
-            Before training: every image resized to 256×256, randomly
+            Before training: every image is resized to 256×256, randomly
             flipped horizontally and vertically for augmentation, then
             normalized to zero mean and unit variance.
           </p>
@@ -152,24 +156,26 @@
         <div class="ds-block">
           <h3>The stack</h3>
 
+          <div class="env-grid">
           <div class="env-card">
             <p class="env-label">Training</p>
-            <p class="env-name">Google Colab · Tesla K80</p>
+            <p class="env-name" style="--logo: var(--colab-logo); --color: var(--colab-color);">Google Colab · Tesla K80</p>
             <p class="env-spec">2,496 CUDA cores · 12GB GDDR5 VRAM · Xeon @2.3GHz, 2 threads</p>
           </div>
 
           <div class="env-card">
             <p class="env-label">Offline evaluation</p>
-            <p class="env-name">Local machine · GTX 1050</p>
+            <p class="env-name" style="--logo: var(--local-logo); --color: var(--local-color);">Local machine · GTX 1050</p>
             <p class="env-spec">4GB GDDR5 VRAM · Intel i5-8300H, quad-core</p>
+          </div>
           </div>
 
           <ul class="lib-tags">
-            <li>Python 3.6</li>
-            <li>PyTorch 1.0</li>
-            <li>CUDA 10</li>
-            <li>NumPy</li>
-            <li>Matplotlib</li>
+            <li style="--logo: var(--python-logo); --color: var(--python-color);">Python 3.6</li>
+            <li style="--logo: var(--pytorch-logo); --color: var(--pytorch-color);">PyTorch 1.0</li>
+            <li style="--logo: var(--cuda-logo); --color: var(--cuda-color);">CUDA 10</li>
+            <li style="--logo: var(--numpy-logo); --color: var(--numpy-color);">NumPy</li>
+            <li style="--logo: var(--matplotlib-logo); --color: var(--matplotlib-color);">Matplotlib</li>
           </ul>
         </div>
       </div>
@@ -191,8 +197,8 @@
           small bottleneck, then try to rebuild it from just that. The
           bottleneck can't hold everything, so the network is forced to
           keep only what matters. We fed that same bottleneck into a
-          small classifier head and trained both objectives — rebuild the
-          image, grade its severity — together. In practice, whatever
+          small classifier head and trained both objectives together: rebuild the
+          image, grade its severity. In practice, whatever
           helps the network rebuild the image well also tends to help it
           grade the image correctly.
         </p>
@@ -211,10 +217,10 @@
         </object>
         <figcaption>
           Every dimension here matches the report's own kernel-size table:
-          each encoder step doubles the channel depth (16→32→64→128)
+          each encoder step doubles the channel depth (16 → 32 → 64 → 128)
           while halving the spatial resolution; the decoder mirrors it in
           reverse with transpose convolutions. ReLU everywhere except the
-          decoder's last layer, which uses a sigmoid — reconstructed
+          decoder's last layer, which uses a sigmoid: reconstructed
           pixels need to land between 0 and 1.
           Hover (or tab to) any shape for a short caption.
         </figcaption>
@@ -225,7 +231,7 @@
       <h2 id="training-heading">Training procedure</h2>
       <p class="training-intro">
         The final model wasn't trained in one pass. It went through three
-        distinct phases over 100 epochs total, each with a different job —
+        distinct phases over 100 epochs total, each with a different job:
         the same autoencoder-then-joint-then-freeze idea the earlier
         single-phase version didn't have yet.
       </p>
@@ -240,7 +246,7 @@
         <li>
           <p class="phase-name">Learn to see <span class="phase-range">epochs 1–50</span></p>
           <p class="phase-body">
-            Only the autoencoder trains — encoder and decoder, reconstruction
+            Only the autoencoder trains: encoder and decoder, reconstruction
             loss only. No classifier yet. The goal is a network that can
             already compress and rebuild a fundus photo well before it's
             asked to diagnose anything from that compression.
@@ -249,7 +255,7 @@
         <li>
           <p class="phase-name">Learn together <span class="phase-range">epochs 51–80</span></p>
           <p class="phase-body">
-            The classifier head is attached and everything trains jointly —
+            The classifier head is attached and everything trains jointly;
             reconstruction loss and classification loss, summed. This is
             where the two objectives actually pull on each other.
           </p>
@@ -258,7 +264,7 @@
           <p class="phase-name">Specialize <span class="phase-range">epochs 81–100</span></p>
           <p class="phase-body">
             The encoder is frozen. Only the classifier keeps training, on
-            classification loss alone — letting it settle into the
+            classification loss alone, letting it settle into the
             now-stable features without the joint objective still pulling
             them around.
           </p>
@@ -280,9 +286,9 @@
     <section class="results" aria-labelledby="results-heading">
       <h2 id="results-heading">Results</h2>
       <p class="results-intro">
-        These are the five worked examples from the original presentation —
+        These are the five examples from the original source code,
         one per severity grade, not a random sample of the test set. Real
-        photo, the model's actual softmax output, and the true grade. Open
+        photos, the model's actual softmax output, and the true grade. Open
         any one for the full probability breakdown.
       </p>
 
@@ -338,25 +344,23 @@
     <section class="paper" aria-labelledby="paper-heading">
       <h2 id="paper-heading">Published research</h2>
       <p class="paper-intro">
-        This work was peer-reviewed and published at IEEE ICCCA 2020 — a
-        few months past the capstone report above, with a proper training
-        schedule, more baselines to compare against, and about six points
-        of accuracy gained in the process.
+        This work was peer-reviewed and published at the IEEE ICCCA 2020 conference, with more baselines to compare against, and about six points of accuracy gained in the process.
       </p>
 
       <div class="paper-grid">
         <div class="citation">
           <p class="citation-text">
-            “Reducing Overfitting in Diabetic Retinopathy Detection using
-            Transfer Learning,” <br>
-            <em>2020 IEEE 5th International Conference
-            on Computing Communication and Automation (ICCCA)</em>, 
-            October 2020, pp. 298–301.
+            <span class="citation-text-name">“Reducing Overfitting in Diabetic Retinopathy Detection using
+            Transfer Learning,”</span>
+            <em class="citation-text-conf">2020 IEEE 5th International Conference
+            on Computing Communication and Automation (ICCCA),</em>
+            <span class="citation-text-date">October 2020,</span> <span class="citation-text-page"></span>pp. 298–301.</span>
           </p>
-          <p class="citation-doi">doi: 10.1109/ICCCA49541.2020.9250772</p>
-          <a class="paper-link" href="https://doi.org/10.1109/ICCCA49541.2020.9250772" target="_blank" rel="noopener">
-            View on IEEE Xplore <span class="sr-only">(opens in a new tab)</span>
-          </a>
+          <p class="citation-doi">View on IEEE Xplore<span class="sr-only"> (opens in a new tab)</span>:            
+            <a class="paper-link" href="https://doi.org/10.1109/ICCCA49541.2020.9250772" target="_blank" rel="noopener">
+              doi: 10.1109/ICCCA49541.2020.9250772
+            </a>
+          </p>
         </div>
 
         <table class="comparison-table">
@@ -381,7 +385,7 @@
               <td>73.91%</td>
             </tr>
             <tr class="ours">
-              <th scope="row">Ours — autoencoder + CNN</th>
+              <th scope="row">Ours: autoencoder + CNN</th>
               <td>76.27%</td>
             </tr>
           </tbody>
@@ -393,7 +397,7 @@
       <h2 id="reflection-heading">Looking back</h2>
 
       <figure class="progression-figure">
-        <img src="images/accuracy-progression.svg" alt="Line chart: test accuracy was 70% in the November 2019 capstone report, 73% at the best result of the phase-5 evaluation, and 76.3% in the paper published at IEEE ICCCA in October 2020.">
+        <img src="images/accuracy-progression.svg" alt="Line chart: test accuracy was 70% in the initial evaluation around November 2019, 73% at the best result of the main evaluation around March 2020, and 76.3% in the paper published at IEEE ICCCA in October 2020.">
       </figure>
 
       <div class="reflection-text">
@@ -401,7 +405,7 @@
           Almost none of that six-point gain came from a better
           architecture. Same encoder, same decoder, same classifier head
           the whole way through. What actually moved the number was the
-          training procedure — pretraining the autoencoder alone before
+          training procedure: pretraining the autoencoder alone before
           ever touching the classifier, then unfreezing it in stages
           instead of throwing everything into one 20-epoch joint run and
           hoping. The idea didn't change between the capstone report and
@@ -412,19 +416,19 @@
           argue with first. 70% of the dataset is healthy retinas, so a
           model that's lazy about the rare classes can still post a
           respectable-looking number. We never broke the result down by
-          class — precision and recall per grade would have told a more
+          class; precision and recall per grade would have told a more
           honest story than one aggregate percentage does, especially for
           the Severe and Proliferative cases that actually matter most to
           catch.
         </p>
         <p>
-          The dataset itself was the other honest lesson: different
+          The dataset itself was the other honest lesson: it had different
           cameras, inconsistent exposure, the occasional mislabeled or
           inverted image. That's not a flaw in the experiment, it's what
           real screening data actually looks like, and it's a big part of
           why the regularization mattered in the first place. And the
           project was always framed as helping a doctor triage faster,
-          not replacing one — the natural next step, if there were a next
+          not replacing one. The natural next step, if there were a next
           step, would be making the model show its work: which part of
           the image actually drove a given grade, rather than a bare
           probability.

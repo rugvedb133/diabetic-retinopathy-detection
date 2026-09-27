@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 220" role="img" aria-labelledby="prog-title prog-desc" font-family="IBM Plex Sans, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 15 680 220" role="img" aria-labelledby="prog-title prog-desc" font-family="IBM Plex Sans, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
 <title id="prog-title">Test accuracy over three iterations of the project</title>
 <desc id="prog-desc">A line chart with three points: 70 percent in the November 2019 capstone report, 73 percent at the best result of the phase-5 evaluation, and 76.3 percent in the paper published at IEEE ICCCA in October 2020.</desc>
-<rect x="0" y="0" width="680" height="220" rx="14" fill="#221B14" stroke="#2D2418"/>
+<rect x="0" y="15" width="680" height="220" rx="14" fill="#221B14" stroke="#2D2418"/>
 <polyline points="55.0,130.0 330.0,100.0 605.0,67.0" fill="none" stroke="#D57027" stroke-width="2"/>
 <circle cx="55.0" cy="130.0" r="4.5" fill="#DCAE94"/>
 <text x="55.0" y="114.0" text-anchor="start" font-family="IBM Plex Mono, monospace" font-size="15" fill="#F3ECE4">70%</text>
 <text x="55.0" y="200.0" text-anchor="start" font-size="11" fill="#BBB0A4">Nov 2019</text>
-<text x="55.0" y="216.0" text-anchor="start" font-size="10" fill="#8C8074">Capstone report</text>
+<text x="55.0" y="216.0" text-anchor="start" font-size="10" fill="#8C8074">Initial evaluation</text>
 <circle cx="330.0" cy="100.0" r="4.5" fill="#DCAE94"/>
 <text x="330.0" y="84.0" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" fill="#F3ECE4">73%</text>
-<text x="330.0" y="200.0" text-anchor="middle" font-size="11" fill="#BBB0A4">2020</text>
-<text x="330.0" y="216.0" text-anchor="middle" font-size="10" fill="#8C8074">Phase-5 evaluation</text>
+<text x="330.0" y="200.0" text-anchor="middle" font-size="11" fill="#BBB0A4">Mar 2020</text>
+<text x="330.0" y="216.0" text-anchor="middle" font-size="10" fill="#8C8074">Main evaluation</text>
 <circle cx="605.0" cy="67.0" r="6" fill="#D57027"/>
 <text x="605.0" y="51.0" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="15" fill="#F3ECE4">76.3%</text>
 <text x="605.0" y="200.0" text-anchor="end" font-size="11" fill="#BBB0A4">Oct 2020</text>
-<text x="605.0" y="216.0" text-anchor="end" font-size="10" fill="#8C8074">Published (ICCCA)</text>
+<text x="605.0" y="216.0" text-anchor="end" font-size="10" fill="#8C8074">Published</text>
 </svg>

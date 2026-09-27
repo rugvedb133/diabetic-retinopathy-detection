@@ -22,7 +22,7 @@
   --font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 
-  --content-width: 72rem;
+  --content-width: 78rem;
 }
 
 /* ---------------------------------------------------------------
@@ -42,7 +42,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 h1, h2, h3 { line-height: 1.15; margin: 0; }
-p { margin: 0; }
+p { margin: 0; text-align: justify; }
 
 a {
   color: var(--peach);
@@ -110,7 +110,7 @@ a:hover { color: var(--amber-bright); }
   position: relative;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 4rem 1.5rem 5rem;
+  padding: 3rem 1.5rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
   gap: 2rem;
@@ -118,7 +118,7 @@ a:hover { color: var(--amber-bright); }
   overflow: hidden;
 }
 
-.hero-text { max-width: 40rem; }
+/* .hero-text { max-width: 40rem; } */
 
 .hero-kicker {
   font-size: 0.9rem;
@@ -130,24 +130,23 @@ a:hover { color: var(--amber-bright); }
   font-size: clamp(2rem, 4.4vw, 3.4rem);
   font-weight: 600;
   letter-spacing: -0.01em;
-  max-width: 18ch;
 }
 
 .hero-lede {
   margin-top: 1.5rem;
   font-size: 1.1rem;
   color: var(--ink-dim);
-  max-width: 58ch;
   line-height: 1.7;
 }
 
 .hero-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.25rem;
+  gap: 3rem;
   margin: 2.75rem 0 0;
   padding-top: 1.75rem;
   border-top: 1px solid var(--border);
+  justify-content: space-around;
 }
 .hero-stats .stat { margin: 0; }
 .hero-stats dt {
@@ -235,10 +234,10 @@ a:hover { color: var(--amber-bright); }
 .problem {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 2rem 1.5rem 6rem;
+  padding: 4rem 1.5rem;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 3.5rem;
+  /* grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); */
+  gap: 2rem;
   align-items: center;
   border-top: 1px solid var(--border);
 }
@@ -246,7 +245,7 @@ a:hover { color: var(--amber-bright); }
 .problem-text h2 {
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   font-weight: 600;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   margin-bottom: 1.25rem;
 }
 
@@ -254,15 +253,17 @@ a:hover { color: var(--amber-bright); }
   color: var(--ink-dim);
   font-size: 1.05rem;
   line-height: 1.75;
-  max-width: 52ch;
+  /* max-width: 52ch; */
 }
 .problem-text p + p { margin-top: 1.25rem; }
 
 .severity-strip {
+  width: clamp(480px, 100%, 640px); 
+  margin: auto;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 2rem 1.75rem 1.75rem;
+  padding: 2rem 1.75rem 0.75rem;
 }
 
 .severity-list {
@@ -318,10 +319,11 @@ a:hover { color: var(--amber-bright); }
 .severity-list li:last-child .sw { margin-right: 0; margin-left: auto; }
 
 .severity-caption {
+  text-align: center;
   color: var(--ink-dim);
   font-size: 0.85rem;
   margin: 0;
-  padding-top: 1.25rem;
+  padding-top: 0.25rem;
   border-top: 1px solid var(--border);
 }
 
@@ -339,19 +341,19 @@ a:hover { color: var(--amber-bright); }
 .data-stack {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 5rem 1.5rem 6rem;
+  padding: 4rem 1.5rem;
   border-top: 1px solid var(--border);
 }
 
 .data-stack h2 {
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   font-weight: 600;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .ds-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  /* grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); */
   gap: 3.5rem;
 }
 
@@ -366,17 +368,21 @@ a:hover { color: var(--amber-bright); }
   color: var(--ink-dim);
   font-size: 1rem;
   line-height: 1.75;
-  max-width: 56ch;
+  /* max-width: 56ch; */
 }
+.dataset-link { color: var(--amber-bright); text-decoration: none; }
+.dataset-link:hover { color: var(--peach); }
 
 /* Distribution chart */
 .dist-chart {
+  background-color: rgba(0, 0, 0, 0.05);
   list-style: none;
-  margin: 1.75rem 0 0;
+  margin: 1.75rem auto 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+  max-width: 36rem;
 }
 .dist-chart li {
   display: grid;
@@ -415,7 +421,7 @@ a:hover { color: var(--amber-bright); }
   margin-top: 1.25rem;
   font-size: 0.92rem;
   color: var(--ink-faint);
-  max-width: 56ch;
+  /* max-width: 56ch; */
 }
 
 .prep-note {
@@ -425,10 +431,16 @@ a:hover { color: var(--amber-bright); }
   color: var(--ink-dim);
   font-size: 0.92rem;
   line-height: 1.75;
-  max-width: 56ch;
+  /* max-width: 56ch; */
 }
 
 /* Stack cards */
+.env-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 .env-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -459,7 +471,7 @@ a:hover { color: var(--amber-bright); }
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1.5rem;
   margin: 1.25rem 0 0;
   padding: 0;
 }
@@ -488,7 +500,7 @@ a:hover { color: var(--amber-bright); }
 .architecture {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 5rem 1.5rem 6rem;
+  padding: 4rem 1.5rem;
   border-top: 1px solid var(--border);
 }
 .architecture h2 {
@@ -498,7 +510,7 @@ a:hover { color: var(--amber-bright); }
 }
 .arch-text {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   gap: 2.5rem;
   margin-bottom: 3rem;
 }
@@ -520,11 +532,12 @@ a:hover { color: var(--amber-bright); }
   border-radius: 16px;
 }
 .arch-figure figcaption {
+  text-align: justify;
   margin-top: 1rem;
   color: var(--ink-faint);
   font-size: 0.88rem;
   line-height: 1.7;
-  max-width: 68ch;
+  /* max-width: 68ch; */
 }
 
 @media (max-width: 860px) {
@@ -537,7 +550,7 @@ a:hover { color: var(--amber-bright); }
 .training {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 5rem 1.5rem 6rem;
+  padding: 4rem 1.5rem;
   border-top: 1px solid var(--border);
 }
 .training h2 {
@@ -549,7 +562,7 @@ a:hover { color: var(--amber-bright); }
   color: var(--ink-dim);
   font-size: 1.05rem;
   line-height: 1.75;
-  max-width: 62ch;
+  /* max-width: 62ch; */
   margin-bottom: 2.5rem;
 }
 
@@ -568,6 +581,7 @@ a:hover { color: var(--amber-bright); }
   justify-content: center;
   font-family: var(--font-mono);
   font-size: 0.78rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 /* per-segment text color, chosen for contrast against that segment's fill */
 .phase-seg:nth-child(1) { color: var(--bg); }
@@ -646,7 +660,7 @@ a:hover { color: var(--amber-bright); }
 .results {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 5rem 1.5rem 6rem;
+  padding: 4rem 1.5rem;
   border-top: 1px solid var(--border);
 }
 .results h2 {
@@ -658,7 +672,7 @@ a:hover { color: var(--amber-bright); }
   color: var(--ink-dim);
   font-size: 1.02rem;
   line-height: 1.75;
-  max-width: 64ch;
+  /* max-width: 64ch; */
   margin-bottom: 2.5rem;
 }
 
@@ -687,6 +701,7 @@ a:hover { color: var(--amber-bright); }
   aspect-ratio: 1;
   object-fit: cover;
   display: block;
+  border-radius: 50px;
 }
 .result-meta {
   display: block;
@@ -714,6 +729,7 @@ a:hover { color: var(--amber-bright); }
 }
 .mini-bar.true { opacity: 1; }
 .result-card:hover .mini-bars { transform-origin: bottom; transform: scaleY(2);}
+.result-card:hover .result-trigger > img { transform-origin: center; transform: scale(0.9);}
 
 /* Dialog */
 .result-dialog {
@@ -722,8 +738,7 @@ a:hover { color: var(--amber-bright); }
   padding: 0;
   background: var(--bg-elevated);
   color: var(--ink);
-  max-width: 640px;
-  width: min(92vw, 640px);
+  max-width: min(92vw, 640px);
 }
 .result-dialog::backdrop {
   background: rgba(10, 8, 6, 0.72);
@@ -846,7 +861,7 @@ a:hover { color: var(--amber-bright); }
 .paper {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 5rem 1.5rem 6rem;
+  padding: 4rem 1.5rem;
   border-top: 1px solid var(--border);
 }
 .paper h2 {
@@ -858,7 +873,6 @@ a:hover { color: var(--amber-bright); }
   color: var(--ink-dim);
   font-size: 1.02rem;
   line-height: 1.75;
-  max-width: 64ch;
   margin-bottom: 2.5rem;
 }
 
@@ -898,6 +912,9 @@ a:hover { color: var(--amber-bright); }
   text-decoration: none;
 }
 .paper-link:hover { color: var(--peach); }
+
+.citation-text-name, .citation-text-conf { display: block; text-align: left; }
+.citation-text-date, .citation-text-page { display: inline-block; }
 
 .comparison-table {
   width: 100%;
@@ -958,7 +975,7 @@ a:hover { color: var(--amber-bright); }
 }
 
 .progression-figure {
-  margin: 0 0 3rem;
+  margin: 0 auto 3rem;
   max-width: 42rem;
 }
 .progression-figure img {
@@ -969,7 +986,7 @@ a:hover { color: var(--amber-bright); }
 }
 
 .reflection-text {
-  max-width: 68ch;
+  /* max-width: 68ch; */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -980,3 +997,69 @@ a:hover { color: var(--amber-bright); }
   line-height: 1.8;
   margin: 0;
 }
+
+/* ---------------------------------------------------------------
+   Icons
+   ---------------------------------------------------------------- */
+.paper {
+  --ieee-logo: url("https://raw.githubusercontent.com/jpswalsh/academicons/master/svg/ieee.svg");
+  --ieee-color: #00629B;
+}
+.citation-doi::before {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-right: 0.25em;
+  background-color: currentColor;
+  mask-image: var(--ieee-logo);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+.citation-doi:hover::before { background-color: var(--ieee-color); }
+
+.env-card {
+  --colab-logo: url("https://simpleicons.org/icons/googlecolab.svg");
+  --colab-color: #F9AB00;
+  --local-logo: url("https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7.x/svgs/solid/laptop-code.svg");
+  --local-color: #76B900;
+}
+.env-name::before {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-right: 0.25em;
+  background-color: currentColor;
+  mask-image: var(--logo);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+}
+.env-card:hover .env-name::before { background-color: var(--color); }
+
+.data-stack .lib-tags {
+  --python-logo: url("https://simpleicons.org/icons/python.svg");
+  --python-color: #3776AB;
+  --pytorch-logo: url("https://simpleicons.org/icons/pytorch.svg");
+  --pytorch-color: #EE4C2C;
+  --cuda-logo: url("https://simpleicons.org/icons/nvidia.svg");
+  --cuda-color: #76B900;
+  --numpy-logo: url("https://simpleicons.org/icons/numpy.svg");
+  --numpy-color: #013243;
+  --matplotlib-logo: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjMTE1NTdjIiBkPSJNNjQgMTI2Yy0xNi41NiAwLTMyLjEzLTYuNDQ5LTQzLjg0LTE4LjE1OVMyIDgwLjU2MSAyIDY0czYuNDQ5LTMyLjEzIDE4LjE1OS00My44NDFTNDcuNDM5IDIgNjQgMnMzMi4xMzEgNi40NDkgNDMuODQxIDE4LjE1OVMxMjYgNDcuNDM5IDEyNiA2NHMtNi40NDkgMzIuMTMxLTE4LjE1OSA0My44NDFTODAuNTYxIDEyNiA2NCAxMjZ6TTY0IDMuODJjLTE2LjA3NCAwLTMxLjE4NyA2LjI2LTQyLjU1MyAxNy42MjZDMTAuMDggMzIuODEzIDMuODIgNDcuOTI1IDMuODIgNjRzNi4yNiAzMS4xODggMTcuNjI2IDQyLjU1NFM0Ny45MjUgMTI0LjE4IDY0IDEyNC4xOHMzMS4xODgtNi4yNiA0Mi41NTQtMTcuNjI2UzEyNC4xOCA4MC4wNzUgMTI0LjE4IDY0cy02LjI2LTMxLjE4Ny0xNy42MjYtNDIuNTU0Qzk1LjE4NyAxMC4wOCA4MC4wNzUgMy44MiA2NCAzLjgyeiIvPjxwYXRoIGZpbGw9IiMxMTU1N2MiIGQ9Ik02NCAxMTIuMzVjLTI2LjY2IDAtNDguMzUtMjEuNjg5LTQ4LjM1LTQ4LjM1UzM3LjM0IDE1LjY1IDY0IDE1LjY1IDExMi4zNSAzNy4zNCAxMTIuMzUgNjQgOTAuNjYgMTEyLjM1IDY0IDExMi4zNXptMC05NmMtMjYuMjc0IDAtNDcuNjUgMjEuMzc1LTQ3LjY1IDQ3LjY1UzM3LjcyNiAxMTEuNjUgNjQgMTExLjY1IDExMS42NSA5MC4yNzQgMTExLjY1IDY0IDkwLjI3NCAxNi4zNSA2NCAxNi4zNXoiLz48cGF0aCBmaWxsPSIjMTE1NTdjIiBkPSJNNjQgOTguMzVjLTE4Ljk0IDAtMzQuMzUtMTUuNDEtMzQuMzUtMzQuMzVTNDUuMDYgMjkuNjUgNjQgMjkuNjUgOTguMzUgNDUuMDYgOTguMzUgNjQgODIuOTQgOTguMzUgNjQgOTguMzV6bTAtNjhjLTE4LjU1NSAwLTMzLjY1IDE1LjA5NS0zMy42NSAzMy42NVM0NS40NDUgOTcuNjUgNjQgOTcuNjUgOTcuNjUgODIuNTU1IDk3LjY1IDY0IDgyLjU1NSAzMC4zNSA2NCAzMC4zNXoiLz48cGF0aCBmaWxsPSIjMTE1NTdjIiBkPSJNNjQgODQuMzVjLTExLjIyMSAwLTIwLjM1LTkuMTI5LTIwLjM1LTIwLjM1UzUyLjc3OSA0My42NSA2NCA0My42NSA4NC4zNSA1Mi43NzkgODQuMzUgNjQgNzUuMjIxIDg0LjM1IDY0IDg0LjM1em0wLTQwYy0xMC44MzUgMC0xOS42NSA4LjgxNS0xOS42NSAxOS42NVM1My4xNjUgODMuNjUgNjQgODMuNjUgODMuNjUgNzQuODM1IDgzLjY1IDY0IDc0LjgzNSA0NC4zNSA2NCA0NC4zNXoiLz48cGF0aCBmaWxsPSIjMTE1NTdjIiBkPSJNNjQgNzEuMzVjLTQuMDUzIDAtNy4zNS0zLjI5Ny03LjM1LTcuMzVzMy4yOTctNy4zNSA3LjM1LTcuMzUgNy4zNSAzLjI5NyA3LjM1IDcuMzUtMy4yOTcgNy4zNS03LjM1IDcuMzV6bTAtMTRjLTMuNjY3IDAtNi42NSAyLjk4My02LjY1IDYuNjVzMi45ODMgNi42NSA2LjY1IDYuNjUgNi42NS0yLjk4MyA2LjY1LTYuNjUtMi45ODMtNi42NS02LjY1LTYuNjV6Ii8+PHBhdGggZmlsbD0iIzExNTU3YyIgZD0iTTEwNy4wNjEgOTYuODM2IDY1LjE3OCA2NC4xOTdsMTIuMzczLjAwMWEuNDEzLjQxMyAwIDAgMCAuNDEzLS40MTMgMTMuOTE4IDEzLjkxOCAwIDAgMC0uNjg0LTQuMzIzdi0uMDAxYS40MTQuNDE0IDAgMCAwLS41MjEtLjI2NGwtMTEuNjA0IDMuNzY5TDg5LjY5MyAzMi4yYS40MTQuNDE0IDAgMCAwLS4wNjYtLjU4MSA0MC45OTYgNDAuOTk2IDAgMCAwLTExLjE5Ni02LjM1MWgtLjAwMWEuNDEyLjQxMiAwIDAgMC0uNTMxLjI0Mkw2NC4wNzIgNjIuMzQ5IDUyLjI5NiAxMC43NTJhLjQxNC40MTQgMCAwIDAtLjQ5NS0uMzEyIDU0Ljc4NCA1NC43ODQgMCAwIDAtMjIuODkyIDExLjM0MmwtLjAwMi4wMDJhLjQxMi40MTIgMCAwIDAtLjA1LjU4TDYyLjQzIDYyLjU3OCAyMS4zNDcgNDIuNzk0aC0uMDAxYS40MTMuNDEzIDAgMCAwLS41NTEuMTkzYy00LjM3OCA5LjA0Ni01Ljc5IDE5LjQ3MS0zLjk3NyAyOS4zNTVhLjQxNS40MTUgMCAwIDAgLjQ4MS4zMzJsNDMuNzQ4LTcuOTQtMjEuNzE1IDEwLjQ1N2gtLjAwMWEuNDE0LjQxNCAwIDAgMC0uMTkyLjU1MiAyNy42NTYgMjcuNjU2IDAgMCAwIDIuMTc3IDMuNzM4LjQyLjQyIDAgMCAwIC41NzcuMTA1TDYzLjMzNCA2NC43M2wtNy4zMTUgMzIuMDQ5YS40MTYuNDE2IDAgMCAwIC4zMTEuNDk2YzIuNDk1LjU3IDUuMDguODU3IDcuNjYuODU3IDEuOTIzLjAwMSAzLjg0Mi0uMTYgNS43MzgtLjQ4MWEuNDE0LjQxNCAwIDAgMCAuMzM5LS40NzdsLTUuNDE3LTMxLjg4IDMyLjg1NyA0MS4yMDJhLjQxNC40MTQgMCAwIDAgLjU4LjA2NyA1NC42OTYgNTQuNjk2IDAgMCAwIDkuMDQ1LTkuMTQ2LjQxMy40MTMgMCAwIDAtLjA3MS0uNTgxeiIvPjxwYXRoIGZpbGw9IiMxMTU1N2MiIGQ9Ik02NC4zNSAxMjUuMzVoLS43VjY0Ljg0NWwtNDIuNzg0IDQyLjc4My0uNDk1LS40OTUuMjQ4LS4yNDdMNjMuMTU1IDY0LjM1SDIuNjV2LS43aDYwLjUwNUwyMC4zNzIgMjAuODY2bC40OTUtLjQ5NUw2My42NSA2My4xNTVWMi42NWguN3Y2MC41MDVsNDIuNzg0LTQyLjc4My40OTUuNDk1LS4yNDguMjQ4TDY0Ljg0NSA2My42NWg2MC41MDV2LjdINjQuODQ1bDQyLjc4MyA0Mi43ODQtLjQ5NS40OTUtLjI0Ny0uMjQ4TDY0LjM1IDY0Ljg0NXY2MC41MDV6Ii8+PC9zdmc+");
+  --matplotlib-color: #65baea;
+}
+.data-stack .lib-tags li::before {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-right: 0.25em;
+  background-color: currentColor;
+  mask-image: var(--logo);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+}
+.data-stack .lib-tags li:hover::before { background-color: var(--color); }
