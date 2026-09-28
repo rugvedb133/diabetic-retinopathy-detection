@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 15 680 220" role="img" aria-labelledby="prog-title prog-desc" font-family="IBM Plex Sans, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 15 680 220" role="img" aria-labelledby="prog-title prog-desc" font-family="IBM Plex Sans, Arial, sans-serif">
 <title id="prog-title">Test accuracy over three iterations of the project</title>
 <desc id="prog-desc">A line chart with three points: 70 percent in the November 2019 capstone report, 73 percent at the best result of the phase-5 evaluation, and 76.3 percent in the paper published at IEEE ICCCA in October 2020.</desc>
 <rect x="0" y="15" width="680" height="220" rx="14" fill="#221B14" stroke="#2D2418"/>

@@ -105,7 +105,7 @@
         <div class="ds-block">
           <h3>The dataset</h3>
           <p class="ds-intro">
-            The <a class="dataset-link" href="https://www.kaggle.com/competitions/diabetic-retinopathy-detection/data" target="_blank" rel="noopener">dataset</a> was a collection of 31,631 fundus photos from EyePACS, an open retinopathy-screening
+            The <a class="dataset-link" href="https://www.kaggle.com/competitions/diabetic-retinopathy-detection/data" target="_blank" rel="noopener" title="Diabetic Retinopathy Detection | Kaggle">dataset</a> was a collection of 31,631 fundus photos from EyePACS, an open retinopathy-screening
             platform, each graded 0–4 by a clinician. It's real screening
             data, not a clean benchmark: different camera models, some
             images inverted, some out of focus or over/underexposed, a
@@ -157,17 +157,17 @@
           <h3>The stack</h3>
 
           <div class="env-grid">
-          <div class="env-card">
-            <p class="env-label">Training</p>
-            <p class="env-name" style="--logo: var(--colab-logo); --color: var(--colab-color);">Google Colab · Tesla K80</p>
-            <p class="env-spec">2,496 CUDA cores · 12GB GDDR5 VRAM · Xeon @2.3GHz, 2 threads</p>
-          </div>
+            <div class="env-card">
+              <p class="env-label">Training</p>
+              <p class="env-name" style="--logo: var(--colab-logo); --color: var(--colab-color);">Google Colab · Tesla K80</p>
+              <p class="env-spec">2,496 CUDA cores · 12GB GDDR5 VRAM · Xeon @2.3GHz, 2 threads</p>
+            </div>
 
-          <div class="env-card">
-            <p class="env-label">Offline evaluation</p>
-            <p class="env-name" style="--logo: var(--local-logo); --color: var(--local-color);">Local machine · GTX 1050</p>
-            <p class="env-spec">4GB GDDR5 VRAM · Intel i5-8300H, quad-core</p>
-          </div>
+            <div class="env-card">
+              <p class="env-label">Offline evaluation</p>
+              <p class="env-name" style="--logo: var(--local-logo); --color: var(--local-color);">Local machine · GTX 1050</p>
+              <p class="env-spec">4GB GDDR5 VRAM · Intel i5-8300H, quad-core</p>
+            </div>
           </div>
 
           <ul class="lib-tags">
@@ -244,7 +244,10 @@
 
       <ol class="phase-list">
         <li>
-          <p class="phase-name">Learn to see <span class="phase-range">epochs 1–50</span></p>
+          <p class="phase-name">
+            Learn to see
+            <span class="phase-range">epochs 1–50</span>
+          </p>
           <p class="phase-body">
             Only the autoencoder trains: encoder and decoder, reconstruction
             loss only. No classifier yet. The goal is a network that can
@@ -253,7 +256,10 @@
           </p>
         </li>
         <li>
-          <p class="phase-name">Learn together <span class="phase-range">epochs 51–80</span></p>
+          <p class="phase-name">
+            Learn together
+            <span class="phase-range">epochs 51–80</span>
+          </p>
           <p class="phase-body">
             The classifier head is attached and everything trains jointly;
             reconstruction loss and classification loss, summed. This is
@@ -261,7 +267,10 @@
           </p>
         </li>
         <li>
-          <p class="phase-name">Specialize <span class="phase-range">epochs 81–100</span></p>
+          <p class="phase-name">
+            Specialize
+            <span class="phase-range">epochs 81–100</span>
+          </p>
           <p class="phase-body">
             The encoder is frozen. Only the classifier keeps training, on
             classification loss alone, letting it settle into the
@@ -297,8 +306,14 @@
             <button class="result-trigger" data-dialog="dlg-0" aria-haspopup="dialog">
               <img src="images/results/grade0.jpg" alt="Fundus photo, grade 0 (No DR)" loading="lazy">
               <span class="result-meta">
-                <span class="result-grade">Grade 0 — No DR</span>
-                <span class="mini-bars" aria-hidden="true"><span class="mini-bar true" style="--h:56.9%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:21.9%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:19.6%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:1.1%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:0.4%; --stop:var(--umber)"></span></span>
+                <span class="result-grade">Grade 0: No DR</span>
+                <span class="mini-bars" aria-hidden="true">
+                  <span class="mini-bar true" style="--h:56.9%; --stop:var(--peach)"></span>
+                  <span class="mini-bar" style="--h:21.9%; --stop:var(--amber-bright)"></span>
+                  <span class="mini-bar" style="--h:19.6%; --stop:var(--amber)"></span>
+                  <span class="mini-bar" style="--h:1.1%; --stop:var(--amber-deep)"></span>
+                  <span class="mini-bar" style="--h:0.4%; --stop:var(--umber)"></span>
+                </span>
               </span>
             </button>
           </li>
@@ -306,8 +321,14 @@
             <button class="result-trigger" data-dialog="dlg-1" aria-haspopup="dialog">
               <img src="images/results/grade1.jpg" alt="Fundus photo, grade 1 (Mild)" loading="lazy">
               <span class="result-meta">
-                <span class="result-grade">Grade 1 — Mild</span>
-                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:21.7%; --stop:var(--peach)"></span><span class="mini-bar true" style="--h:34.2%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:20.4%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:12.6%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:11.1%; --stop:var(--umber)"></span></span>
+                <span class="result-grade">Grade 1: Mild</span>
+                <span class="mini-bars" aria-hidden="true">
+                  <span class="mini-bar" style="--h:21.7%; --stop:var(--peach)"></span>
+                  <span class="mini-bar true" style="--h:34.2%; --stop:var(--amber-bright)"></span>
+                  <span class="mini-bar" style="--h:20.4%; --stop:var(--amber)"></span>
+                  <span class="mini-bar" style="--h:12.6%; --stop:var(--amber-deep)"></span>
+                  <span class="mini-bar" style="--h:11.1%; --stop:var(--umber)"></span>
+                </span>
               </span>
             </button>
           </li>
@@ -315,8 +336,14 @@
             <button class="result-trigger" data-dialog="dlg-2" aria-haspopup="dialog">
               <img src="images/results/grade2.jpg" alt="Fundus photo, grade 2 (Moderate)" loading="lazy">
               <span class="result-meta">
-                <span class="result-grade">Grade 2 — Moderate</span>
-                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:2.4%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:0.8%; --stop:var(--amber-bright)"></span><span class="mini-bar true" style="--h:63.6%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:27.9%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:5.3%; --stop:var(--umber)"></span></span>
+                <span class="result-grade">Grade 2: Moderate</span>
+                <span class="mini-bars" aria-hidden="true">
+                  <span class="mini-bar" style="--h:2.4%; --stop:var(--peach)"></span>
+                  <span class="mini-bar" style="--h:0.8%; --stop:var(--amber-bright)"></span>
+                  <span class="mini-bar true" style="--h:63.6%; --stop:var(--amber)"></span>
+                  <span class="mini-bar" style="--h:27.9%; --stop:var(--amber-deep)"></span>
+                  <span class="mini-bar" style="--h:5.3%; --stop:var(--umber)"></span>
+                </span>
               </span>
             </button>
           </li>
@@ -324,8 +351,14 @@
             <button class="result-trigger" data-dialog="dlg-3" aria-haspopup="dialog">
               <img src="images/results/grade3.jpg" alt="Fundus photo, grade 3 (Severe)" loading="lazy">
               <span class="result-meta">
-                <span class="result-grade">Grade 3 — Severe</span>
-                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:3.3%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:3.1%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:28.0%; --stop:var(--amber)"></span><span class="mini-bar true" style="--h:55.0%; --stop:var(--amber-deep)"></span><span class="mini-bar" style="--h:10.6%; --stop:var(--umber)"></span></span>
+                <span class="result-grade">Grade 3: Severe</span>
+                <span class="mini-bars" aria-hidden="true">
+                  <span class="mini-bar" style="--h:3.3%; --stop:var(--peach)"></span>
+                  <span class="mini-bar" style="--h:3.1%; --stop:var(--amber-bright)"></span>
+                  <span class="mini-bar" style="--h:28.0%; --stop:var(--amber)"></span>
+                  <span class="mini-bar true" style="--h:55.0%; --stop:var(--amber-deep)"></span>
+                  <span class="mini-bar" style="--h:10.6%; --stop:var(--umber)"></span>
+                </span>
               </span>
             </button>
           </li>
@@ -333,8 +366,14 @@
             <button class="result-trigger" data-dialog="dlg-4" aria-haspopup="dialog">
               <img src="images/results/grade4.jpg" alt="Fundus photo, grade 4 (Proliferative)" loading="lazy">
               <span class="result-meta">
-                <span class="result-grade">Grade 4 — Proliferative</span>
-                <span class="mini-bars" aria-hidden="true"><span class="mini-bar" style="--h:11.4%; --stop:var(--peach)"></span><span class="mini-bar" style="--h:5.1%; --stop:var(--amber-bright)"></span><span class="mini-bar" style="--h:27.1%; --stop:var(--amber)"></span><span class="mini-bar" style="--h:15.8%; --stop:var(--amber-deep)"></span><span class="mini-bar true" style="--h:40.6%; --stop:var(--umber)"></span></span>
+                <span class="result-grade">Grade 4: Proliferative</span>
+                <span class="mini-bars" aria-hidden="true">
+                  <span class="mini-bar" style="--h:11.4%; --stop:var(--peach)"></span>
+                  <span class="mini-bar" style="--h:5.1%; --stop:var(--amber-bright)"></span>
+                  <span class="mini-bar" style="--h:27.1%; --stop:var(--amber)"></span>
+                  <span class="mini-bar" style="--h:15.8%; --stop:var(--amber-deep)"></span>
+                  <span class="mini-bar true" style="--h:40.6%; --stop:var(--umber)"></span>
+                </span>
               </span>
             </button>
           </li>
@@ -356,8 +395,8 @@
             on Computing Communication and Automation (ICCCA),</em>
             <span class="citation-text-date">October 2020,</span> <span class="citation-text-page"></span>pp. 298–301.</span>
           </p>
-          <p class="citation-doi">View on IEEE Xplore<span class="sr-only"> (opens in a new tab)</span>:            
-            <a class="paper-link" href="https://doi.org/10.1109/ICCCA49541.2020.9250772" target="_blank" rel="noopener">
+          <p class="citation-doi">View on IEEE Xplore<span class="sr-only"> (opens in a new tab)</span>:
+            <a class="paper-link" href="https://doi.org/10.1109/ICCCA49541.2020.9250772" target="_blank" rel="noopener" title="Reducing Overfitting in Diabetic Retinopathy Detection using Transfer Learning | IEEE Conference Publication | IEEE Xplore">
               doi: 10.1109/ICCCA49541.2020.9250772
             </a>
           </p>
@@ -395,10 +434,6 @@
 
     <section class="reflection" aria-labelledby="reflection-heading">
       <h2 id="reflection-heading">Looking back</h2>
-
-      <figure class="progression-figure">
-        <img src="images/accuracy-progression.svg" alt="Line chart: test accuracy was 70% in the initial evaluation around November 2019, 73% at the best result of the main evaluation around March 2020, and 76.3% in the paper published at IEEE ICCCA in October 2020.">
-      </figure>
 
       <div class="reflection-text">
         <p>
@@ -441,36 +476,46 @@
         <button type="button" class="dialog-close" aria-label="Close">×</button>
         <img src="images/results/grade0.jpg" alt="Fundus photo, grade 0 (No DR)">
         <div class="result-dialog-body">
-          <h3 id="dlg-0-title">Grade 0 — No DR</h3>
+          <h3 id="dlg-0-title">Grade 0: No DR</h3>
           <p class="result-file">EyePACS id: 389_left</p>
           <ul class="rb-list">
             <li class="rb-row true">
               <span class="rb-label">No DR</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:56.9%; --stop:var(--peach)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:56.9%; --stop:var(--peach)"></span>
+              </span>
               <span class="rb-val">56.9%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Mild</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:21.9%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:21.9%; --stop:var(--amber-bright)"></span>
+              </span>
               <span class="rb-val">21.9%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Moderate</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:19.6%; --stop:var(--amber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:19.6%; --stop:var(--amber)"></span>
+              </span>
               <span class="rb-val">19.6%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Severe</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:1.1%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:1.1%; --stop:var(--amber-deep)"></span>
+              </span>
               <span class="rb-val">1.1%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Proliferative</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:0.4%; --stop:var(--umber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:0.4%; --stop:var(--umber)"></span>
+              </span>
               <span class="rb-val">0.4%</span>
             </li>
           </ul>
-          <p class="result-verdict">Model predicted <strong>No DR</strong> (56.9% confidence) — correct.</p>
+          <p class="result-verdict">Model predicted <strong title="No Diabetic Retinopathy">No DR</strong> (56.9% confidence).</p>
         </div>
       </div>
     </dialog>
@@ -479,36 +524,46 @@
         <button type="button" class="dialog-close" aria-label="Close">×</button>
         <img src="images/results/grade1.jpg" alt="Fundus photo, grade 1 (Mild)">
         <div class="result-dialog-body">
-          <h3 id="dlg-1-title">Grade 1 — Mild</h3>
-          <p class="result-file">EyePACS id: 5137_left</p>
+          <h3 id="dlg-1-title">Grade 1: Mild</h3>
+          <p class="result-file">EyePACS id: 5249_left</p>
           <ul class="rb-list">
             <li class="rb-row">
               <span class="rb-label">No DR</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:21.7%; --stop:var(--peach)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:21.7%; --stop:var(--peach)"></span>
+              </span>
               <span class="rb-val">21.7%</span>
             </li>
             <li class="rb-row true">
               <span class="rb-label">Mild</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:34.2%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:34.2%; --stop:var(--amber-bright)"></span>
+              </span>
               <span class="rb-val">34.2%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Moderate</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:20.4%; --stop:var(--amber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:20.4%; --stop:var(--amber)"></span>
+              </span>
               <span class="rb-val">20.4%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Severe</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:12.6%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:12.6%; --stop:var(--amber-deep)"></span>
+              </span>
               <span class="rb-val">12.6%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Proliferative</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:11.1%; --stop:var(--umber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:11.1%; --stop:var(--umber)"></span>
+              </span>
               <span class="rb-val">11.1%</span>
             </li>
           </ul>
-          <p class="result-verdict">Model predicted <strong>Mild</strong> (34.2% confidence) — correct.</p>
+          <p class="result-verdict">Model predicted <strong>Mild</strong> (34.2% confidence).</p>
         </div>
       </div>
     </dialog>
@@ -517,36 +572,46 @@
         <button type="button" class="dialog-close" aria-label="Close">×</button>
         <img src="images/results/grade2.jpg" alt="Fundus photo, grade 2 (Moderate)">
         <div class="result-dialog-body">
-          <h3 id="dlg-2-title">Grade 2 — Moderate</h3>
+          <h3 id="dlg-2-title">Grade 2: Moderate</h3>
           <p class="result-file">EyePACS id: 5800_left</p>
           <ul class="rb-list">
             <li class="rb-row">
               <span class="rb-label">No DR</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:2.4%; --stop:var(--peach)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:2.4%; --stop:var(--peach)"></span>
+              </span>
               <span class="rb-val">2.4%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Mild</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:0.8%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:0.8%; --stop:var(--amber-bright)"></span>
+              </span>
               <span class="rb-val">0.8%</span>
             </li>
             <li class="rb-row true">
               <span class="rb-label">Moderate</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:63.6%; --stop:var(--amber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:63.6%; --stop:var(--amber)"></span>
+              </span>
               <span class="rb-val">63.6%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Severe</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:27.9%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:27.9%; --stop:var(--amber-deep)"></span>
+              </span>
               <span class="rb-val">27.9%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Proliferative</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:5.3%; --stop:var(--umber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:5.3%; --stop:var(--umber)"></span>
+              </span>
               <span class="rb-val">5.3%</span>
             </li>
           </ul>
-          <p class="result-verdict">Model predicted <strong>Moderate</strong> (63.6% confidence) — correct.</p>
+          <p class="result-verdict">Model predicted <strong>Moderate</strong> (63.6% confidence).</p>
         </div>
       </div>
     </dialog>
@@ -555,36 +620,46 @@
         <button type="button" class="dialog-close" aria-label="Close">×</button>
         <img src="images/results/grade3.jpg" alt="Fundus photo, grade 3 (Severe)">
         <div class="result-dialog-body">
-          <h3 id="dlg-3-title">Grade 3 — Severe</h3>
+          <h3 id="dlg-3-title">Grade 3: Severe</h3>
           <p class="result-file">EyePACS id: 38198_right</p>
           <ul class="rb-list">
             <li class="rb-row">
               <span class="rb-label">No DR</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:3.3%; --stop:var(--peach)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:3.3%; --stop:var(--peach)"></span>
+              </span>
               <span class="rb-val">3.3%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Mild</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:3.1%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:3.1%; --stop:var(--amber-bright)"></span>
+            </span>
               <span class="rb-val">3.1%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Moderate</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:28.0%; --stop:var(--amber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:28.0%; --stop:var(--amber)"></span>
+              </span>
               <span class="rb-val">28.0%</span>
             </li>
             <li class="rb-row true">
               <span class="rb-label">Severe</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:55.0%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:55.0%; --stop:var(--amber-deep)"></span>
+              </span>
               <span class="rb-val">55.0%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Proliferative</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:10.6%; --stop:var(--umber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:10.6%; --stop:var(--umber)"></span>
+              </span>
               <span class="rb-val">10.6%</span>
             </li>
           </ul>
-          <p class="result-verdict">Model predicted <strong>Severe</strong> (55.0% confidence) — correct.</p>
+          <p class="result-verdict">Model predicted <strong>Severe</strong> (55.0% confidence).</p>
         </div>
       </div>
     </dialog>
@@ -593,36 +668,46 @@
         <button type="button" class="dialog-close" aria-label="Close">×</button>
         <img src="images/results/grade4.jpg" alt="Fundus photo, grade 4 (Proliferative)">
         <div class="result-dialog-body">
-          <h3 id="dlg-4-title">Grade 4 — Proliferative</h3>
+          <h3 id="dlg-4-title">Grade 4: Proliferative</h3>
           <p class="result-file">EyePACS id: 15975_right</p>
           <ul class="rb-list">
             <li class="rb-row">
               <span class="rb-label">No DR</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:11.4%; --stop:var(--peach)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:11.4%; --stop:var(--peach)"></span>
+              </span>
               <span class="rb-val">11.4%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Mild</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:5.1%; --stop:var(--amber-bright)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:5.1%; --stop:var(--amber-bright)"></span>
+              </span>
               <span class="rb-val">5.1%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Moderate</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:27.1%; --stop:var(--amber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:27.1%; --stop:var(--amber)"></span>
+              </span>
               <span class="rb-val">27.1%</span>
             </li>
             <li class="rb-row">
               <span class="rb-label">Severe</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:15.8%; --stop:var(--amber-deep)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:15.8%; --stop:var(--amber-deep)"></span>
+              </span>
               <span class="rb-val">15.8%</span>
             </li>
             <li class="rb-row true">
               <span class="rb-label">Proliferative</span>
-              <span class="rb-bar"><span class="rb-fill" style="--pct:40.6%; --stop:var(--umber)"></span></span>
+              <span class="rb-bar">
+                <span class="rb-fill" style="--pct:40.6%; --stop:var(--umber)"></span>
+              </span>
               <span class="rb-val">40.6%</span>
             </li>
           </ul>
-          <p class="result-verdict">Model predicted <strong>Proliferative</strong> (40.6% confidence) — correct.</p>
+          <p class="result-verdict">Model predicted <strong>Proliferative</strong> (40.6% confidence).</p>
         </div>
       </div>
     </dialog>
