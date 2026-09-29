@@ -27,15 +27,26 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="home-link" href="https://rugvedb133.github.io/">← Back to portfolio</a>
+    <nav aria-label="Section navigation">
+      <a href="#top" class="home-link">Diabetic Retinopathy Detection</a>
+      <ul class="site-nav-list">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#data-stack">Data</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#paper">Paper</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-heading">
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
       <div class="hero-text">
         <p class="hero-kicker">Capstone Project</p>
         <h1 id="hero-heading">Grading Diabetic Retinopathy from Retinal Fundus Photographs</h1>
@@ -66,7 +77,7 @@
         <div class="orb"></div>
       </div>
     </section>
-    <section class="problem" aria-labelledby="problem-heading">
+    <section id="problem" class="problem" aria-labelledby="problem-heading">
       <div class="problem-text">
         <h2 id="problem-heading">The screening bottleneck</h2>
         <p>
@@ -98,7 +109,7 @@
       </div>
     </section>
 
-    <section class="data-stack" aria-labelledby="data-stack-heading">
+    <section id="data-stack" class="data-stack" aria-labelledby="data-stack-heading">
       <h2 id="data-stack-heading">Data &amp; stack</h2>
 
       <div class="ds-grid">
@@ -181,7 +192,7 @@
       </div>
     </section>
 
-    <section class="architecture" aria-labelledby="arch-heading">
+    <section id="architecture" class="architecture" aria-labelledby="arch-heading">
       <h2 id="arch-heading">How it works</h2>
 
       <div class="arch-text">
@@ -227,7 +238,7 @@
       </figure>
     </section>
 
-    <section class="training" aria-labelledby="training-heading">
+    <section id="training" class="training" aria-labelledby="training-heading">
       <h2 id="training-heading">Training procedure</h2>
       <p class="training-intro">
         The final model wasn't trained in one pass. It went through three
@@ -292,7 +303,7 @@
       </div>
     </section>
 
-    <section class="results" aria-labelledby="results-heading">
+    <section id="results" class="results" aria-labelledby="results-heading">
       <h2 id="results-heading">Results</h2>
       <p class="results-intro">
         These are the five examples from the original source code,
@@ -302,85 +313,85 @@
       </p>
 
       <ul class="results-grid">
-          <li class="result-card">
-            <button class="result-trigger" data-dialog="dlg-0" aria-haspopup="dialog">
-              <img src="images/results/grade0.jpg" alt="Fundus photo, grade 0 (No DR)" loading="lazy">
-              <span class="result-meta">
-                <span class="result-grade">Grade 0: No DR</span>
-                <span class="mini-bars" aria-hidden="true">
-                  <span class="mini-bar true" style="--h:56.9%; --stop:var(--peach)"></span>
-                  <span class="mini-bar" style="--h:21.9%; --stop:var(--amber-bright)"></span>
-                  <span class="mini-bar" style="--h:19.6%; --stop:var(--amber)"></span>
-                  <span class="mini-bar" style="--h:1.1%; --stop:var(--amber-deep)"></span>
-                  <span class="mini-bar" style="--h:0.4%; --stop:var(--umber)"></span>
-                </span>
+        <li class="result-card">
+          <button class="result-trigger" data-dialog="dlg-0" aria-haspopup="dialog">
+            <img src="images/results/grade0.jpg" alt="Fundus photo, grade 0 (No DR)" loading="lazy">
+            <span class="result-meta">
+              <span class="result-grade">Grade 0: No DR</span>
+              <span class="mini-bars" aria-hidden="true">
+                <span class="mini-bar true" style="--h:56.9%; --stop:var(--peach)"></span>
+                <span class="mini-bar" style="--h:21.9%; --stop:var(--amber-bright)"></span>
+                <span class="mini-bar" style="--h:19.6%; --stop:var(--amber)"></span>
+                <span class="mini-bar" style="--h:1.1%; --stop:var(--amber-deep)"></span>
+                <span class="mini-bar" style="--h:0.4%; --stop:var(--umber)"></span>
               </span>
-            </button>
-          </li>
-          <li class="result-card">
-            <button class="result-trigger" data-dialog="dlg-1" aria-haspopup="dialog">
-              <img src="images/results/grade1.jpg" alt="Fundus photo, grade 1 (Mild)" loading="lazy">
-              <span class="result-meta">
-                <span class="result-grade">Grade 1: Mild</span>
-                <span class="mini-bars" aria-hidden="true">
-                  <span class="mini-bar" style="--h:21.7%; --stop:var(--peach)"></span>
-                  <span class="mini-bar true" style="--h:34.2%; --stop:var(--amber-bright)"></span>
-                  <span class="mini-bar" style="--h:20.4%; --stop:var(--amber)"></span>
-                  <span class="mini-bar" style="--h:12.6%; --stop:var(--amber-deep)"></span>
-                  <span class="mini-bar" style="--h:11.1%; --stop:var(--umber)"></span>
-                </span>
+            </span>
+          </button>
+        </li>
+        <li class="result-card">
+          <button class="result-trigger" data-dialog="dlg-1" aria-haspopup="dialog">
+            <img src="images/results/grade1.jpg" alt="Fundus photo, grade 1 (Mild)" loading="lazy">
+            <span class="result-meta">
+              <span class="result-grade">Grade 1: Mild</span>
+              <span class="mini-bars" aria-hidden="true">
+                <span class="mini-bar" style="--h:21.7%; --stop:var(--peach)"></span>
+                <span class="mini-bar true" style="--h:34.2%; --stop:var(--amber-bright)"></span>
+                <span class="mini-bar" style="--h:20.4%; --stop:var(--amber)"></span>
+                <span class="mini-bar" style="--h:12.6%; --stop:var(--amber-deep)"></span>
+                <span class="mini-bar" style="--h:11.1%; --stop:var(--umber)"></span>
               </span>
-            </button>
-          </li>
-          <li class="result-card">
-            <button class="result-trigger" data-dialog="dlg-2" aria-haspopup="dialog">
-              <img src="images/results/grade2.jpg" alt="Fundus photo, grade 2 (Moderate)" loading="lazy">
-              <span class="result-meta">
-                <span class="result-grade">Grade 2: Moderate</span>
-                <span class="mini-bars" aria-hidden="true">
-                  <span class="mini-bar" style="--h:2.4%; --stop:var(--peach)"></span>
-                  <span class="mini-bar" style="--h:0.8%; --stop:var(--amber-bright)"></span>
-                  <span class="mini-bar true" style="--h:63.6%; --stop:var(--amber)"></span>
-                  <span class="mini-bar" style="--h:27.9%; --stop:var(--amber-deep)"></span>
-                  <span class="mini-bar" style="--h:5.3%; --stop:var(--umber)"></span>
-                </span>
+            </span>
+          </button>
+        </li>
+        <li class="result-card">
+          <button class="result-trigger" data-dialog="dlg-2" aria-haspopup="dialog">
+            <img src="images/results/grade2.jpg" alt="Fundus photo, grade 2 (Moderate)" loading="lazy">
+            <span class="result-meta">
+              <span class="result-grade">Grade 2: Moderate</span>
+              <span class="mini-bars" aria-hidden="true">
+                <span class="mini-bar" style="--h:2.4%; --stop:var(--peach)"></span>
+                <span class="mini-bar" style="--h:0.8%; --stop:var(--amber-bright)"></span>
+                <span class="mini-bar true" style="--h:63.6%; --stop:var(--amber)"></span>
+                <span class="mini-bar" style="--h:27.9%; --stop:var(--amber-deep)"></span>
+                <span class="mini-bar" style="--h:5.3%; --stop:var(--umber)"></span>
               </span>
-            </button>
-          </li>
-          <li class="result-card">
-            <button class="result-trigger" data-dialog="dlg-3" aria-haspopup="dialog">
-              <img src="images/results/grade3.jpg" alt="Fundus photo, grade 3 (Severe)" loading="lazy">
-              <span class="result-meta">
-                <span class="result-grade">Grade 3: Severe</span>
-                <span class="mini-bars" aria-hidden="true">
-                  <span class="mini-bar" style="--h:3.3%; --stop:var(--peach)"></span>
-                  <span class="mini-bar" style="--h:3.1%; --stop:var(--amber-bright)"></span>
-                  <span class="mini-bar" style="--h:28.0%; --stop:var(--amber)"></span>
-                  <span class="mini-bar true" style="--h:55.0%; --stop:var(--amber-deep)"></span>
-                  <span class="mini-bar" style="--h:10.6%; --stop:var(--umber)"></span>
-                </span>
+            </span>
+          </button>
+        </li>
+        <li class="result-card">
+          <button class="result-trigger" data-dialog="dlg-3" aria-haspopup="dialog">
+            <img src="images/results/grade3.jpg" alt="Fundus photo, grade 3 (Severe)" loading="lazy">
+            <span class="result-meta">
+              <span class="result-grade">Grade 3: Severe</span>
+              <span class="mini-bars" aria-hidden="true">
+                <span class="mini-bar" style="--h:3.3%; --stop:var(--peach)"></span>
+                <span class="mini-bar" style="--h:3.1%; --stop:var(--amber-bright)"></span>
+                <span class="mini-bar" style="--h:28.0%; --stop:var(--amber)"></span>
+                <span class="mini-bar true" style="--h:55.0%; --stop:var(--amber-deep)"></span>
+                <span class="mini-bar" style="--h:10.6%; --stop:var(--umber)"></span>
               </span>
-            </button>
-          </li>
-          <li class="result-card">
-            <button class="result-trigger" data-dialog="dlg-4" aria-haspopup="dialog">
-              <img src="images/results/grade4.jpg" alt="Fundus photo, grade 4 (Proliferative)" loading="lazy">
-              <span class="result-meta">
-                <span class="result-grade">Grade 4: Proliferative</span>
-                <span class="mini-bars" aria-hidden="true">
-                  <span class="mini-bar" style="--h:11.4%; --stop:var(--peach)"></span>
-                  <span class="mini-bar" style="--h:5.1%; --stop:var(--amber-bright)"></span>
-                  <span class="mini-bar" style="--h:27.1%; --stop:var(--amber)"></span>
-                  <span class="mini-bar" style="--h:15.8%; --stop:var(--amber-deep)"></span>
-                  <span class="mini-bar true" style="--h:40.6%; --stop:var(--umber)"></span>
-                </span>
+            </span>
+          </button>
+        </li>
+        <li class="result-card">
+          <button class="result-trigger" data-dialog="dlg-4" aria-haspopup="dialog">
+            <img src="images/results/grade4.jpg" alt="Fundus photo, grade 4 (Proliferative)" loading="lazy">
+            <span class="result-meta">
+              <span class="result-grade">Grade 4: Proliferative</span>
+              <span class="mini-bars" aria-hidden="true">
+                <span class="mini-bar" style="--h:11.4%; --stop:var(--peach)"></span>
+                <span class="mini-bar" style="--h:5.1%; --stop:var(--amber-bright)"></span>
+                <span class="mini-bar" style="--h:27.1%; --stop:var(--amber)"></span>
+                <span class="mini-bar" style="--h:15.8%; --stop:var(--amber-deep)"></span>
+                <span class="mini-bar true" style="--h:40.6%; --stop:var(--umber)"></span>
               </span>
-            </button>
-          </li>
+            </span>
+          </button>
+        </li>
       </ul>
     </section>
 
-    <section class="paper" aria-labelledby="paper-heading">
+    <section id="paper" class="paper" aria-labelledby="paper-heading">
       <h2 id="paper-heading">Published research</h2>
       <p class="paper-intro">
         This work was peer-reviewed and published at the IEEE ICCCA 2020 conference, with more baselines to compare against, and about six points of accuracy gained in the process.
@@ -432,7 +443,7 @@
       </div>
     </section>
 
-    <section class="reflection" aria-labelledby="reflection-heading">
+    <section id="reflection" class="reflection" aria-labelledby="reflection-heading">
       <h2 id="reflection-heading">Looking back</h2>
 
       <div class="reflection-text">
@@ -515,7 +526,7 @@
               <span class="rb-val">0.4%</span>
             </li>
           </ul>
-          <p class="result-verdict">Model predicted <strong title="No Diabetic Retinopathy">No DR</strong> (56.9% confidence).</p>
+          <p class="result-verdict">Model predicted <strong class="explain" title="No Diabetic Retinopathy">No DR</strong> (56.9% confidence).</p>
         </div>
       </div>
     </dialog>
@@ -712,6 +723,52 @@
       </div>
     </dialog>
   </main>
+
+  <footer class="site-footer">
+    <details class="references">
+      <summary>Citations &amp; references</summary>
+      <ol class="references-list">
+        <li>
+          Emma Dugas, Jared, Jorge, and Will Cukierski.
+          <em>Diabetic Retinopathy Detection.</em>
+          <a href="https://kaggle.com/competitions/diabetic-retinopathy-detection" target="_blank" rel="noopener">kaggle.com/c/diabetic-retinopathy-detection</a>,
+          2015. Kaggle.
+          Data provided by EyePACS,
+          competition sponsored by the California Healthcare Foundation.
+        </li>
+        <li>
+          N. Barhate, S. Bhave, R. Bhise, R. Sutar, and D. Karia,
+          “<em>Reducing Overfitting in Diabetic Retinopathy Detection using Transfer Learning</em>”,
+          2020 IEEE 5th International Conference on Computing Communication and Automation (ICCCA),
+          2020, pp. 298–301.
+          <a href="https://doi.org/10.1109/ICCCA49541.2020.9250772" target="_blank" rel="noopener">doi:10.1109/ICCCA49541.2020.9250772</a>
+        </li>
+        <li>
+          A. Krizhevsky, I. Sutskever, and G. Hinton,
+          “<em>ImageNet Classification with Deep Convolutional Neural Networks</em>”,
+          Advances in Neural Information Processing Systems 25 (NIPS&nbsp;2012),
+          2012.
+          <a href="https://proceedings.neurips.cc/paper/by-source-2012-534" target="_blank" rel="noopener" title="ImageNet Classification with Deep Convolutional Neural Networks | NeurIPS 2012">neurips.cc/virtual/2012/poster/3684</a>
+          Communications of the ACM, Volume 60, Issue 6
+          2017, pp. 84–90.
+          <a href="https://doi.org/10.1145/3065386" target="_blank" rel="noopener" title="ImageNet classification with deep convolutional neural networks | Communications of the ACM">doi:10.1145/3065386</a>
+        </li>
+        <li>
+          K. Simonyan and A. Zisserman,
+          “<em>Very Deep Convolutional Networks for Large-Scale Image Recognition</em>”,
+          3rd International Conference on Learning Representations (ICLR&nbsp;2015),
+          2015.
+          <a href="https://doi.org/10.48550/arXiv.1409.1556" target="_blank" rel="noopener" title="Very Deep Convolutional Networks for Large-Scale Image Recognition | arXiv.org">doi:10.48550/arXiv.1409.1556</a>
+        </li>
+      </ol>
+    </details>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/projects.html">← Back to all projects</a>
+      &middot;
+      <a href="https://github.com/rugvedb133/diabetic-retinopathy-detection/tree/gh-pages" target="_blank" rel="noopener">Website source repo <span class="sr-only">(opens in a new tab)</span></a>
+    </nav>
+  </footer>
 
   <script src="script.js"></script>
 </body>
